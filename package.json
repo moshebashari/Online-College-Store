@@ -1,0 +1,24 @@
+{
+  "name": "college-online-store",
+  "version": "1.0.0",
+  "description": "The best online store for computer hardware.\r The website of the store is:\r ivory.co.il",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/web-master-college/College-Online-Store.git"
+  },
+  "keywords": [
+    "Store",
+    "Online",
+    "Store"
+  ],
+  "author": "Shachar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/web-master-college/College-Online-Store/issues"
+  },
+  "homepage": "https://github.com/web-master-college/College-Online-Store#readme"
+}
