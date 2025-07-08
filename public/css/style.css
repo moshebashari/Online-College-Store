@@ -630,7 +630,7 @@ textarea.input {
 \*----------------------------*/
 
 .main-nav>li+li {
-  margin-left: 30px
+  margin-left: 30px;
 }
 
 .main-nav>li>a {

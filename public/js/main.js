@@ -1,3 +1,31 @@
+const fullName = document.getElementById('fullName');
+const phone = document.getElementById('phone');
+
+const email = document.getElementById('email');
+const message = document.getElementById('message');
+const contacySubmitBtn = document.getElementById('contact-submit-btn');
+
+function onSubmitContactForm(event){
+	event.preventDefault();
+
+	const isValidSent = fullName.value && phone.value && email.value && message.value;
+	if (isValidSent){
+		const query = `fullName=${fullName.value}&phone=${phone.value}&email=${email.value}&message=${message.value}`;
+		fetch(`api/contact?${query}`)
+		.then(res => res.json())
+		.then(result => {console.log(`result return from server:`, result)});
+	}
+}
+
+
+if(contacySubmitBtn){
+	contacySubmitBtn.addEventListener('click',onSubmitContactForm);
+}
+
+
+
+
+
 (function($) {
 	"use strict"
 
