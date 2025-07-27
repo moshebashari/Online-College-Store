@@ -5,6 +5,8 @@ const homeContorller = require('./controllers/Home');
 const contactController = require('./controllers/Contact')
 const HomePageRoutes = require('./routes/Home');
 const PORT = 3000;
+const {sequelize} = require('./utils/database');
+const { error } = require("console");
 
 
 const app = express();
@@ -18,6 +20,13 @@ app.get('/products', (request, response) => {
 })
 
 
-app.listen(PORT, function(){
-    console.log(chalk.red('Server is running!'));
+app.listen(PORT, async function(){
+    console.log(chalk.blue('Server is running!'));
+    try{
+        await sequelize.authenticate();
+        console.log(chalk.green('connection has been established successfully'));
+    }
+    catch{
+        console.error(chalk.red('Unable to connect to the database:', error));
+    }
 })
