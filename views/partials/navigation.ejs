@@ -1,25 +1,730 @@
-
-<!-- NAVIGATION -->
-		<nav id="navigation">
-			<!-- container -->
-			<div class="container">
-				<!-- responsive-nav -->
-				<div id="responsive-nav">
-					<!-- NAV -->
-					<ul class="main-nav nav navbar-nav">
-						<li class="active"><a href="/">Home</a></li>
-						<li><a href="#">Hot Deals</a></li>
-						<li><a href="#">Categories</a></li>
-						<li><a href="#">Laptops</a></li>
-						<li><a href="#">Smartphones</a></li>
-						<li><a href="#">Cameras</a></li>
-						<li><a href="#">Accessories</a></li>
-                        <li><a href="/contact">Contact us</a></li>
+<div class="hidden bg-white lg:block">
+	<nav class="container mx-auto px-2 sm:px-8">
+		<ul
+			class="menu flex flex-wrap items-center justify-between py-[10px] text-lg">
+			<li
+				class="group relative cursor-pointer after:absolute after:-bottom-[5px] after:left-0 after:right-0 after:h-1 after:w-full after:origin-center after:scale-x-0 after:rounded-lg after:bg-primary-500 after:transition-transform after:duration-200 after:content-[''] hover:after:scale-x-100">
+				<a href="#" class="flex items-center gap-1 font-semibold">
+					<span>Products</span>
+					<i
+						class="bi bi-caret-down-fill flex rotate-0 text-xs text-primary-500 transition-all duration-300 group-hover:rotate-180"></i>
+				</a>
+				<div
+					class="invisible absolute left-0 pt-[10px] opacity-0 transition-all duration-300 group-hover:visible group-hover:opacity-100">
+					<ul
+						class="relative w-[250px] bg-white text-base shadow-[0_2px_10px_rgba(131,125,125,0.50)]">
+						<li class="group/item">
+							<a href="#" class="flex items-center gap-2 p-2">
+								<i
+									class="bi bi-circle-fill invisible flex text-[6px] text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+								<span class="group-hover/item:font-semibold">
+									Pc components
+								</span>
+								<i
+									class="bi bi-caret-right-fill invisible ml-auto flex text-xs text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+							</a>
+							<div
+								class="invisible absolute left-full top-0 min-h-full min-w-[680px] opacity-0 transition-all duration-300 group-hover/item:visible group-hover/item:opacity-100">
+								<div class="bg-white shadow-custom-2">
+									<div class="border-b-2 border-primary-500 py-[10px]">
+										<span
+											class="px-5 text-3xl font-bold uppercase text-primary-500">
+											Pc components
+										</span>
+									</div>
+									<div class="-categories flex flex-wrap">
+										<div class="group/edit p-[10px]">
+											<a
+												class="categorie-container inline-block"
+												href="#">
+												<div class="categorie-img h-[150px] w-[150px]">
+													<img
+														class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+														src="img/categories/pc_components/motherboards.jpg"
+														alt="motherboard" />
+												</div>
+												<span
+													class="block text-center group-hover/edit:font-semibold">
+													Motherboards
+												</span>
+											</a>
+										</div>
+										<div class="group/edit p-[10px]">
+											<a
+												class="categorie-container inline-block"
+												href="#">
+												<div class="categorie-img h-[150px] w-[150px]">
+													<img
+														class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+														src="img/categories/pc_components/processors.jpg"
+														alt="processors" />
+												</div>
+												<span
+													class="block text-center group-hover/edit:font-semibold">
+													Processors
+												</span>
+											</a>
+										</div>
+										<div class="group/edit p-[10px]">
+											<a
+												class="categorie-container inline-block"
+												href="#">
+												<div class="categorie-img h-[150px] w-[150px]">
+													<img
+														class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+														src="img/categories/pc_components/rams.jpg"
+														alt="rams" />
+												</div>
+												<span
+													class="block text-center group-hover/edit:font-semibold">
+													RAMS
+												</span>
+											</a>
+										</div>
+										<div class="group/edit p-[10px]">
+											<a
+												class="categorie-container inline-block"
+												href="#">
+												<div class="categorie-img h-[150px] w-[150px]">
+													<img
+														class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+														src="img/categories/pc_components/video_cards.jpg"
+														alt="video cards" />
+												</div>
+												<span
+													class="block text-center group-hover/edit:font-semibold">
+													Video Cards
+												</span>
+											</a>
+										</div>
+										<div class="group/edit p-[10px]">
+											<a
+												class="categorie-container inline-block"
+												href="#">
+												<div class="categorie-img h-[150px] w-[150px]">
+													<img
+														class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+														src="img/categories/pc_components/power_supplys.jpg"
+														alt="video cards" />
+												</div>
+												<span
+													class="block object-contain text-center group-hover/edit:font-semibold">
+													Power Supplys
+												</span>
+											</a>
+										</div>
+										<div class="group/edit p-[10px]">
+											<a
+												class="categorie-container inline-block"
+												href="#">
+												<div class="categorie-img h-[150px] w-[150px]">
+													<img
+														class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+														src="img/categories/pc_components/hard_drives.jpg"
+														alt="video cards" />
+												</div>
+												<span
+													class="block text-center group-hover/edit:font-semibold">
+													Hard Drives
+												</span>
+											</a>
+										</div>
+										<div class="group/edit p-[10px]">
+											<a
+												class="categorie-container inline-block"
+												href="#">
+												<div class="categorie-img h-[150px] w-[150px]">
+													<img
+														class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+														src="img/categories/pc_components/ssd_disk.jpg"
+														alt="video cards" />
+												</div>
+												<span
+													class="block text-center group-hover/edit:font-semibold">
+													SSD Disk
+												</span>
+											</a>
+										</div>
+										<div class="group/edit p-[10px]">
+											<a
+												class="categorie-container inline-block"
+												href="#">
+												<div class="categorie-img h-[150px] w-[150px]">
+													<img
+														class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+														src="img/categories/pc_components/computer_case.jpg"
+														alt="video cards" />
+												</div>
+												<span
+													class="block text-center group-hover/edit:font-semibold">
+													Case
+												</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="group/item">
+							<a href="#" class="flex items-center gap-2 p-2">
+								<i
+									class="bi bi-circle-fill invisible flex text-[6px] text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+								<span class="group-hover/item:font-semibold">
+									Peripherals
+								</span>
+								<i
+									class="bi bi-caret-right-fill invisible ml-auto flex text-xs text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+							</a>
+							<div
+								class="invisible absolute left-full top-0 min-h-full min-w-[680px] opacity-0 transition-all duration-300 group-hover/item:visible group-hover/item:opacity-100">
+								<div class="bg-white shadow-custom-2">
+									<div class="border-b-2 border-primary-500 py-[10px]">
+										<span
+											class="px-5 text-3xl font-bold uppercase text-primary-500">
+											Peripherals
+										</span>
+									</div>
+									<div class="-categories flex flex-wrap">
+										<div class="group/edit p-[10px]">
+											<a
+												class="categorie-container inline-block"
+												href="#">
+												<div class="categorie-img h-[150px] w-[150px]">
+													<img
+														class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+														src="img/categories/peripherals/keywords.jpg"
+														alt="motherboard" />
+												</div>
+												<span
+													class="block text-center group-hover/edit:font-semibold">
+													Keywords
+												</span>
+											</a>
+										</div>
+										<div class="group/edit p-[10px]">
+											<a
+												class="categorie-container inline-block"
+												href="#">
+												<div class="categorie-img h-[150px] w-[150px]">
+													<img
+														class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+														src="img/categories/peripherals/mouse.jpg"
+														alt="processors" />
+												</div>
+												<span
+													class="block text-center group-hover/edit:font-semibold">
+													Mouses
+												</span>
+											</a>
+										</div>
+										<div class="group/edit p-[10px]">
+											<a
+												class="categorie-container inline-block"
+												href="#">
+												<div class="categorie-img h-[150px] w-[150px]">
+													<img
+														class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+														src="img/categories/peripherals/mic.jpg"
+														alt="rams" />
+												</div>
+												<span
+													class="block text-center group-hover/edit:font-semibold">
+													Mics
+												</span>
+											</a>
+										</div>
+										<div class="group/edit p-[10px]">
+											<a
+												class="categorie-container inline-block"
+												href="#">
+												<div class="categorie-img h-[150px] w-[150px]">
+													<img
+														class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+														src="img/categories/peripherals/webcam.jpg"
+														alt="rams" />
+												</div>
+												<span
+													class="block text-center group-hover/edit:font-semibold">
+													Webcam
+												</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="group/item">
+							<a href="#" class="flex items-center gap-2 p-2">
+								<i
+									class="bi bi-circle-fill invisible flex text-[6px] text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+								<span class="group-hover/item:font-semibold">
+									Computers
+								</span>
+								<i
+									class="bi bi-caret-right-fill invisible ml-auto flex text-xs text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+							</a>
+							<div
+								class="invisible absolute left-full top-0 min-h-full min-w-[680px] opacity-0 transition-all duration-300 group-hover/item:visible group-hover/item:opacity-100">
+								<div class="bg-white shadow-custom-2">
+									<div class="border-b-2 border-primary-500 py-[10px]">
+										<span
+											class="px-5 text-3xl font-bold uppercase text-primary-500">
+											Computers
+										</span>
+									</div>
+									<div class="-categories flex flex-wrap">
+										<div class="group/edit p-[10px]">
+											<a
+												class="categorie-container inline-block"
+												href="#">
+												<div class="categorie-img h-[150px] w-[150px]">
+													<img
+														class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+														src="img/categories/computers/desktops.jpg"
+														alt="motherboard" />
+												</div>
+												<span
+													class="block text-center group-hover/edit:font-semibold">
+													Desktops
+												</span>
+											</a>
+										</div>
+										<div class="group/edit p-[10px]">
+											<a
+												class="categorie-container inline-block"
+												href="#">
+												<div class="categorie-img h-[150px] w-[150px]">
+													<img
+														class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+														src="img/categories/computers/notebooks.jpg"
+														alt="processors" />
+												</div>
+												<span
+													class="block text-center group-hover/edit:font-semibold">
+													Notebooks
+												</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="group/item">
+							<a href="#" class="flex items-center gap-2 p-2">
+								<i
+									class="bi bi-circle-fill invisible flex text-[6px] text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+								<span class="group-hover/item:font-semibold">
+									Monitors
+								</span>
+							</a>
+						</li>
+						<li class="group/item">
+							<a href="#" class="flex items-center gap-2 p-2">
+								<i
+									class="bi bi-circle-fill invisible flex text-[6px] text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+								<span class="group-hover/item:font-semibold">
+									Printers
+								</span>
+							</a>
+						</li>
+						<li class="group/item">
+							<a href="#" class="flex items-center gap-2 p-2">
+								<i
+									class="bi bi-circle-fill invisible flex text-[6px] text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+								<span class="group-hover/item:font-semibold">Gaming</span>
+								<i
+									class="bi bi-caret-right-fill invisible ml-auto flex text-xs text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+							</a>
+							<div
+								class="invisible absolute left-full top-0 min-h-full min-w-[680px] opacity-0 transition-all duration-300 group-hover/item:visible group-hover/item:opacity-100">
+								<div class="bg-white shadow-custom-2">
+									<div class="border-b-2 border-primary-500 py-[10px]">
+										<span
+											class="px-5 text-3xl font-bold uppercase text-primary-500">
+											Gaming
+										</span>
+									</div>
+									<div class="-categories flex flex-wrap">
+										<div class="group/edit p-[10px]">
+											<a
+												class="categorie-container inline-block"
+												href="#">
+												<div class="categorie-img h-[150px] w-[150px]">
+													<img
+														class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+														src="img/categories/gaming/consoles.jpg"
+														alt="motherboard" />
+												</div>
+												<span
+													class="block text-center group-hover/edit:font-semibold">
+													Consoles
+												</span>
+											</a>
+										</div>
+										<div class="group/edit p-[10px]">
+											<a
+												class="categorie-container inline-block"
+												href="#">
+												<div class="categorie-img h-[150px] w-[150px]">
+													<img
+														class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+														src="img/categories/gaming/games.jpg"
+														alt="processors" />
+												</div>
+												<span
+													class="block text-center group-hover/edit:font-semibold">
+													Games
+												</span>
+											</a>
+										</div>
+										<div class="group/edit p-[10px]">
+											<a
+												class="categorie-container inline-block"
+												href="#">
+												<div class="categorie-img h-[150px] w-[150px]">
+													<img
+														class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+														src="img/categories/gaming/accessories.jpg"
+														alt="processors" />
+												</div>
+												<span
+													class="block text-center group-hover/edit:font-semibold">
+													Accessories
+												</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="group/item">
+							<a href="#" class="flex items-center gap-2 p-2">
+								<i
+									class="bi bi-circle-fill invisible flex text-[6px] text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+								<span class="group-hover/item:font-semibold">
+									Tablets
+								</span>
+							</a>
+						</li>
+						<li class="group/item">
+							<a href="#" class="flex items-center gap-2 p-2">
+								<i
+									class="bi bi-circle-fill invisible flex text-[6px] text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+								<span class="group-hover/item:font-semibold">
+									Smartphones
+								</span>
+							</a>
+						</li>
+						<li class="group/item">
+							<a href="#" class="flex items-center gap-2 p-2">
+								<i
+									class="bi bi-circle-fill invisible flex text-[6px] text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+								<span class="group-hover/item:font-semibold">
+									Software
+								</span>
+								<i
+									class="bi bi-caret-right-fill invisible ml-auto flex text-xs text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+							</a>
+							<div
+								class="invisible absolute left-full top-0 min-h-full min-w-[680px] opacity-0 transition-all duration-300 group-hover/item:visible group-hover/item:opacity-100">
+								<div class="bg-white shadow-custom-2">
+									<div class="border-b-2 border-primary-500 py-[10px]">
+										<span
+											class="px-5 text-3xl font-bold uppercase text-primary-500">
+											Software
+										</span>
+									</div>
+									<div class="-categories flex flex-wrap">
+										<div class="group/edit p-[10px]">
+											<a
+												class="categorie-container inline-block"
+												href="#">
+												<div class="categorie-img h-[150px] w-[150px]">
+													<img
+														class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+														src="img/categories/software/os.jpg"
+														alt="motherboard" />
+												</div>
+												<span
+													class="block text-center group-hover/edit:font-semibold">
+													Operating System
+												</span>
+											</a>
+										</div>
+										<div class="group/edit p-[10px]">
+											<a
+												class="categorie-container inline-block"
+												href="#">
+												<div class="categorie-img h-[150px] w-[150px]">
+													<img
+														class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+														src="img/categories/software/office.jpg"
+														alt="processors" />
+												</div>
+												<span
+													class="block text-center group-hover/edit:font-semibold">
+													Office Package
+												</span>
+											</a>
+										</div>
+										<div class="group/edit p-[10px]">
+											<a
+												class="categorie-container inline-block"
+												href="#">
+												<div class="categorie-img h-[150px] w-[150px]">
+													<img
+														class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+														src="img/categories/software/antivirus.jpg"
+														alt="processors" />
+												</div>
+												<span
+													class="block text-center group-hover/edit:font-semibold">
+													Antivirus
+												</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
 					</ul>
-					<!-- /NAV -->
 				</div>
-				<!-- /responsive-nav -->
-			</div>
-			<!-- /container -->
-		</nav>
-		<!-- /NAVIGATION -->
+			</li>
+			<li
+				class="relative cursor-pointer after:absolute after:-bottom-[5px] after:left-0 after:right-0 after:h-1 after:w-full after:origin-center after:scale-x-0 after:rounded-lg after:bg-primary-500 after:transition-transform after:duration-200 after:content-[''] hover:after:scale-x-100">
+				<a href="index.html">Home</a>
+			</li>
+			<li
+				class="group relative cursor-pointer after:absolute after:-bottom-[5px] after:left-0 after:right-0 after:h-1 after:w-full after:origin-center after:scale-x-0 after:rounded-lg after:bg-primary-500 after:transition-transform after:duration-200 after:content-[''] hover:after:scale-x-100">
+				<a href="#" class="flex items-center gap-1">
+					<span>Pages</span>
+					<i
+						class="bi bi-caret-down-fill flex rotate-0 text-xs text-primary-500 transition-all duration-300 group-hover:rotate-180"></i>
+				</a>
+				<div
+					class="invisible absolute left-0 pt-[10px] opacity-0 transition-all duration-300 group-hover:visible group-hover:opacity-100">
+					<ul
+						class="relative w-[250px] bg-white text-base shadow-[0_2px_10px_rgba(131,125,125,0.50)]">
+						<li class="group/item">
+							<a href="#" class="flex items-center gap-2 p-2">
+								<i
+									class="bi bi-circle-fill invisible flex text-[6px] text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+								<span class="group-hover/item:font-semibold">
+									Main pages
+								</span>
+								<i
+									class="bi bi-caret-right-fill invisible ml-auto flex text-xs text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+							</a>
+							<div
+								class="invisible absolute left-full top-0 min-h-full min-w-[250px] opacity-0 transition-all duration-300 group-hover/item:visible group-hover/item:opacity-100">
+								<ul class="bg-white shadow-custom-2">
+									<li>
+										<a
+											class="flex p-2 hover:font-semibold"
+											href="about-us.html">
+											About us
+										</a>
+									</li>
+									<li>
+										<a
+											class="flex p-2 hover:font-semibold"
+											href="wishlist.html">
+											Wishlist
+										</a>
+									</li>
+									<li>
+										<a
+											class="flex p-2 hover:font-semibold"
+											href="shopping-cart.html">
+											Shopping Cart
+										</a>
+									</li>
+									<li>
+										<a
+											class="flex p-2 hover:font-semibold"
+											href="product-details.html">
+											Product Details
+										</a>
+									</li>
+									<li>
+										<a
+											class="flex p-2 hover:font-semibold"
+											href="checkout.html">
+											Checkout
+										</a>
+									</li>
+									<li>
+										<a
+											class="flex p-2 hover:font-semibold"
+											href="shop-mixed.html">
+											Shop - Mixed
+										</a>
+									</li>
+									<li>
+										<a
+											class="flex p-2 hover:font-semibold"
+											href="shop-listed.html">
+											Shop - Listed
+										</a>
+									</li>
+									<li>
+										<a
+											class="flex p-2 hover:font-semibold"
+											href="shop-grid.html">
+											Shop - Grid
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="group/item">
+							<a href="#" class="flex items-center gap-2 p-2">
+								<i
+									class="bi bi-circle-fill invisible flex text-[6px] text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+								<span class="group-hover/item:font-semibold">
+									Account pages
+								</span>
+								<i
+									class="bi bi-caret-right-fill invisible ml-auto flex text-xs text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+							</a>
+							<div
+								class="invisible absolute left-full top-0 min-h-full min-w-[250px] opacity-0 transition-all duration-300 group-hover/item:visible group-hover/item:opacity-100">
+								<ul class="bg-white shadow-custom-2">
+									<li>
+										<a
+											class="flex p-2 hover:font-semibold"
+											href="my-account.html">
+											My account
+										</a>
+									</li>
+									<li>
+										<a
+											class="flex p-2 hover:font-semibold"
+											href="login.html">
+											Login
+										</a>
+									</li>
+									<li>
+										<a
+											class="flex p-2 hover:font-semibold"
+											href="sign-up.html">
+											Sign up
+										</a>
+									</li>
+									<li>
+										<a
+											class="flex p-2 hover:font-semibold"
+											href="forgot-password.html">
+											Forgot password
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="group/item">
+							<a href="#" class="flex items-center gap-2 p-2">
+								<i
+									class="bi bi-circle-fill invisible flex text-[6px] text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+								<span class="group-hover/item:font-semibold">
+									Purchase statuses
+								</span>
+								<i
+									class="bi bi-caret-right-fill invisible ml-auto flex text-xs text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+							</a>
+							<div
+								class="invisible absolute left-full top-0 min-h-full min-w-[250px] opacity-0 transition-all duration-300 group-hover/item:visible group-hover/item:opacity-100">
+								<ul class="bg-white shadow-custom-2">
+									<li>
+										<a
+											class="flex p-2 hover:font-semibold"
+											href="purchase-completed.html">
+											Purchase completed
+										</a>
+									</li>
+									<li>
+										<a
+											class="flex p-2 hover:font-semibold"
+											href="purchase-failed.html">
+											Purchase failed
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="group/item">
+							<a href="#" class="flex items-center gap-2 p-2">
+								<i
+									class="bi bi-circle-fill invisible flex text-[6px] text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+								<span class="group-hover/item:font-semibold">
+									Support and policy
+								</span>
+								<i
+									class="bi bi-caret-right-fill invisible ml-auto flex text-xs text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+							</a>
+							<div
+								class="invisible absolute left-full top-0 min-h-full min-w-[250px] opacity-0 transition-all duration-300 group-hover/item:visible group-hover/item:opacity-100">
+								<ul class="bg-white shadow-custom-2">
+									<li>
+										<a
+											class="flex p-2 hover:font-semibold"
+											href="error404.html">
+											Error 404
+										</a>
+									</li>
+									<li>
+										<a
+											class="flex p-2 hover:font-semibold"
+											href="message-sent.html">
+											Message sent
+										</a>
+									</li>
+									<li>
+										<a
+											class="flex p-2 hover:font-semibold"
+											href="verification.html">
+											Verification
+										</a>
+									</li>
+									<li>
+										<a
+											class="flex p-2 hover:font-semibold"
+											href="privacy-policy.html">
+											Privacy policy
+										</a>
+									</li>
+									<li>
+										<a
+											class="flex p-2 hover:font-semibold"
+											href="terms-and-conditions.html">
+											Terms and conditions
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li
+				class="relative cursor-pointer after:absolute after:-bottom-[5px] after:left-0 after:right-0 after:h-1 after:w-full after:origin-center after:scale-x-0 after:rounded-lg after:bg-primary-500 after:transition-transform after:duration-200 after:content-[''] hover:after:scale-x-100">
+				<a href="#">Desktops</a>
+			</li>
+			<li
+				class="relative cursor-pointer after:absolute after:-bottom-[5px] after:left-0 after:right-0 after:h-1 after:w-full after:origin-center after:scale-x-0 after:rounded-lg after:bg-primary-500 after:transition-transform after:duration-200 after:content-[''] hover:after:scale-x-100">
+				<a href="#">Notebooks</a>
+			</li>
+			<li
+				class="relative cursor-pointer after:absolute after:-bottom-[5px] after:left-0 after:right-0 after:h-1 after:w-full after:origin-center after:scale-x-0 after:rounded-lg after:bg-primary-500 after:transition-transform after:duration-200 after:content-[''] hover:after:scale-x-100">
+				<a href="#">Smartphones</a>
+			</li>
+			<li
+				class="relative cursor-pointer after:absolute after:-bottom-[5px] after:left-0 after:right-0 after:h-1 after:w-full after:origin-center after:scale-x-0 after:rounded-lg after:bg-primary-500 after:transition-transform after:duration-200 after:content-[''] hover:after:scale-x-100">
+				<a href="faqs.html">FAQ's</a>
+			</li>
+			<li
+				class="relative cursor-pointer after:absolute after:-bottom-[5px] after:left-0 after:right-0 after:h-1 after:w-full after:origin-center after:scale-x-0 after:rounded-lg after:bg-primary-500 after:transition-transform after:duration-200 after:content-[''] hover:after:scale-x-100">
+				<a href="/contact-us">Contact Us</a>
+			</li>
+		</ul>
+	</nav>
+</div>
