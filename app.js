@@ -8,17 +8,16 @@ const PORT = 3000;
 const {sequelize} = require('./utils/database');
 const { error } = require("console");
 
-
 const app = express();
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname,'public')))
 app.use(HomePageRoutes);
+// app.use('/api');
 
 app.get('/products', (request, response) => {
     response.write('Ivory pordacts page');
     response.end(); // return 
 })
-
 
 app.listen(PORT, async function(){
     console.log(chalk.blue('Server is running!'));

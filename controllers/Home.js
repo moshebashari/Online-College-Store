@@ -1,4 +1,13 @@
-const homePage = (request, response) =>{
+const { raw } = require('mysql2');
+const {Product, ProductImages} = require('../models');
+
+
+const homePage = async (request, response) =>{
+    const products = await Product.findAll({
+        raw: true,
+        include: [{model: ProductImages, required: false, attribute: ['url']}] // join
+    })
+    console.log(products)
     response.render('Home', {
         title: 'Ivory Store Homepage'
     });

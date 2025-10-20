@@ -1,6 +1,6 @@
+const {sequelize} = require('../utils/database');
 
-
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelizev, DataTypes) => {
     const Product = sequelize.define('Product', {
         id: {
             autoIncrement: true,
@@ -31,9 +31,16 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
             type: DataTypes.INTEGER,
             defaultValue: 0
+        },
+        updatedAt: {
+            allowNull: false,
+            type: DataTypes.DATE,
+            field: 'updated_at'
         }
 
     })
-
+    Product.associate = (models) => {
+            models.Product.hasMany(models.ProductImages, {foreignKey: 'product_id'});
+        }
     return Product;
 }
