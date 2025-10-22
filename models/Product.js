@@ -1,4 +1,4 @@
-const {sequelize} = require('../utils/database');
+const { sequelize } = require('../utils/database');
 
 module.exports = (sequelizev, DataTypes) => {
     const Product = sequelize.define('Product', {
@@ -23,11 +23,11 @@ module.exports = (sequelizev, DataTypes) => {
             type: DataTypes.INTEGER,
             defaultValue: 0
         },
-        sku:{
+        sku: {
             allowNull: false,
             type: DataTypes.INTEGER
         },
-        stock:{
+        stock: {
             allowNull: false,
             type: DataTypes.INTEGER,
             defaultValue: 0
@@ -40,7 +40,11 @@ module.exports = (sequelizev, DataTypes) => {
 
     })
     Product.associate = (models) => {
-            models.Product.hasMany(models.ProductImages, {foreignKey: 'product_id'});
-        }
+        models.Product.hasMany(models.ProductImages, { foreignKey: 'product_id' });
+    }
+
+    Product.associate = (models) => {
+        models.Product.hasOne(models.ProductCategories, { foreignKey: 'product_id' });
+    }
     return Product;
 }
