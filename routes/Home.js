@@ -8,5 +8,6 @@ router.get('/contact-us', HomeController.contactUsPage);
 
 router.get('/api/contact-us', HomeController.contactUsPageAPI);
 
+router.get('/admin')
 
 module.exports = router;

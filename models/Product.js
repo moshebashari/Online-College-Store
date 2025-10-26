@@ -43,8 +43,8 @@ module.exports = (sequelizev, DataTypes) => {
         models.Product.hasMany(models.ProductImages, { foreignKey: 'product_id' });
     }
 
-    Product.associate = (models) => {
-        models.Product.hasOne(models.ProductCategories, { foreignKey: 'product_id' });
-    }
+    // Product.associate = (models) => {
+    //     models.Product.hasOne(models.ProductCategories, { foreignKey: 'product_id' });
+    // }
     return Product;
 }
