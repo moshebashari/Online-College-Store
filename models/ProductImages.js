@@ -19,6 +19,8 @@ module.exports = (sequelizez, DataTypes) => {
             fields: ['product_id', 'url']
         }],
         tableName: 'product_images',
+
+        timestamps: false
         
     })
 

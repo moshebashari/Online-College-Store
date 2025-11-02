@@ -1,3 +1,4 @@
+const { HasMany } = require('sequelize');
 const { sequelize } = require('../utils/database');
 
 module.exports = (sequelizev, DataTypes) => {
@@ -32,19 +33,22 @@ module.exports = (sequelizev, DataTypes) => {
             type: DataTypes.INTEGER,
             defaultValue: 0
         },
+        createdAt: {
+            allowNull: false,
+            type: DataTypes.DATE,
+            field: 'created_at'
+        },
         updatedAt: {
             allowNull: false,
             type: DataTypes.DATE,
             field: 'updated_at'
         }
 
-    })
+    }) 
     Product.associate = (models) => {
-        models.Product.hasMany(models.ProductImages, { foreignKey: 'product_id' });
+        models.Product.hasMany(models.ProductImages, { as: 'images', foreignKey: 'product_id' });
+        models.Product.hasMany(models.ProductCategories, { foreignKey: 'product_id' });
     }
 
-    Product.associate = (models) => {
-        models.Product.hasOne(models.ProductCategories, { foreignKey: 'product_id' });
-    }
     return Product;
 }

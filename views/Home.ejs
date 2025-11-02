@@ -33,7 +33,7 @@
           class="absolute z-[1] h-full w-full bg-gradient-to-t from-transparent to-black/70"></div>
         <img
           class="h-full w-full object-cover transition-all duration-300 group-hover:scale-110 hover:transform"
-          src="img/categories/sec-desktop-g.jpg"
+          src="/img/categories/sec-desktop-g.jpg"
           alt="banner-img" />
         <div class="absolute left-0 top-0 flex h-full w-full items-center">
           <div class="z-[2] p-5">
@@ -122,6 +122,8 @@
 
     <div class="swiper swiper-cards-1 group relative flex items-center py-5">
       <div class="swiper-wrapper">
+        <!-- start first product -->
+        <% for(var product of products){ %>
         <div class="swiper-slide h-auto">
           <div
             class="card-container relative flex h-full flex-col overflow-hidden rounded-lg bg-white p-5 shadow-md transition-all duration-300 hover:z-[2] hover:-translate-y-2 hover:shadow-xl">
@@ -144,44 +146,48 @@
                 </a>
               </div>
             </div>
-            <div
+            <!-- start: Only if we have discount -->
+            <!-- <div
               class="absolute left-0 top-0 flex h-[35px] w-[90px] items-center justify-center rounded-br-lg bg-primary-500">
               <span
                 class="text-md text-center font-semibold uppercase text-white">
                 25% Off
               </span>
-            </div>
+            </div> -->
+            <!-- end: Only if we have discount -->
             <div class="h-[190px] overflow-hidden rounded-lg">
               <a href="#">
                 <img
                   class="h-full w-full object-contain"
-                  src="img/cards/notebooks/note_1.jpg"
+                  src="<%= product.url %>"
                   alt="product" />
               </a>
             </div>
+            <!-- start: instock or not -->
+            
             <div class="my-2 flex justify-between">
               <div class="my-2" data-rater="5"></div>
               <div>
                 <span
                   class="relative z-[4] rounded-md bg-green-300 px-2 py-1 text-xs font-bold uppercase text-white">
-                  instock
+                  <%= product.stock > 0 ? 'instock' : 'outofstock' %>
                 </span>
               </div>
             </div>
+            <!-- end: instock or not -->
             <div class="my-1">
               <a class="line-clamp-1break-all font-medium" href="#">
-                Apple Macbook Aire 13
+                <%= product.name %>
               </a>
             </div>
             <div class="my-1">
               <p class="line-clamp-2 text-sm text-gray-400">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Itaque culpa, odio, qui praesentium dignissimos eaque dolorum
-                porro alias neque, eius animi ipsa voluptates. Optio repellat
-                tempora voluptas, dolores ipsam ad!
+                <%= product.description %>
               </p>
             </div>
-            <div class="my-2 flex gap-2">
+            <!-- 
+                 --- only for variations ----              
+              <div class="my-2 flex gap-2">
               <span class="font-bold">Size:</span>
               <ul class="flex gap-3">
                 <li>S</li>
@@ -189,23 +195,25 @@
                 <li>L</li>
                 <li>XL</li>
               </ul>
-            </div>
+            </div> 
+            --- only for variations ----
             <div class="my-2 flex gap-2">
               <div class="block h-3 w-3 rounded-full bg-blue-600"></div>
               <div class="block h-3 w-3 rounded-full bg-red-600"></div>
               <div class="block h-3 w-3 rounded-full bg-yellow-600"></div>
               <div class="block h-3 w-3 rounded-full bg-black"></div>
             </div>
+            -->
             <div class="my-1">
-              <span class="text-lg font-bold">$37.00</span>
-              <span class="text-sm text-primary-500 line-through">
+              <span class="text-lg font-bold"><%= product.price %>&#8362;</span>
+              <!-- <span class="text-sm text-primary-500 line-through">
                 $50.00
-              </span>
+              </span> -->
             </div>
             <div class="mt-auto">
               <a
                 class="relative flex w-full items-center justify-center overflow-hidden rounded-lg bg-primary-500 p-2 transition-all duration-300 after:absolute after:left-2/4 after:top-2/4 after:h-0 after:w-0 after:rounded-lg after:bg-primary-400 after:transition-all after:duration-300 after:content-[''] hover:after:left-0 hover:after:top-0 hover:after:z-[3] hover:after:h-full hover:after:w-full"
-                href="#">
+                href="/product/<%= product.id %>">
                 <span class="relative z-[4] font-bold uppercase text-white">
                   View details
                 </span>
@@ -213,7 +221,9 @@
             </div>
           </div>
         </div>
-        <div class="swiper-slide h-auto">
+     <%  } %>
+        <!-- end first product -->
+        <!-- <div class="swiper-slide h-auto">
           <div
             class="card-container relative flex h-full flex-col overflow-hidden rounded-lg bg-white p-5 shadow-md transition-all duration-300 hover:z-[2] hover:-translate-y-2 hover:shadow-xl">
             <div class="absolute right-[10px] top-[10px]">
@@ -849,7 +859,7 @@
               </a>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       <div
         class="button-next absolute -right-16 z-20 flex h-10 w-10 select-none items-center justify-center rounded bg-black/30 text-xl text-white shadow transition-all duration-300 group-hover:right-4 hover:bg-primary-500 hover:shadow-md">
