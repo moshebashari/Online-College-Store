@@ -57,5 +57,5 @@ const contactUsPageAPI = (request, response) => {
 module.exports = {
     homePage,
     contactUsPage,
-    contactUsPageAPI
+    contactUsPageAPI,
 }
