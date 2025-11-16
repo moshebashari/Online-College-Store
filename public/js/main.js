@@ -845,3 +845,64 @@ const sendEmail = () => {
       );
     });
 };
+
+const contactFormMain = document.querySelector('#contact-form');
+function onSubmitForm(event) {
+  event.preventDefault();
+  const formData = new FormData(event.target);
+  const data = Object.fromEntries(formData.entries());
+  const query = new URLSearchParams(data).toString();
+
+  fetch('/api/contact?' + query)
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
+      notifyMessage('Form submitted successfully!');
+      event.target.reset();
+    }else{
+      notifyMessage('Error submitting form...'); 
+    }
+  });
+
+}
+if(contactFormMain) {
+  contactFormMain.addEventListener('submit', onSubmitForm);
+}
+
+const signUpForm = document.getElementById('sign-up-form');
+
+function onSubmitSignUpForm(event) {
+  event.preventDefault();
+  const name = document.querySelector('input[name=username]');
+  const email = document.querySelector('input[name=email]');
+  const password = document.querySelector('input[name=password');
+  const confirmPassword = document.querySelector('input[name=password2]');
+  let isError = false;
+
+  if (name && name.value.trim() === '') {
+    notifyMessage('Name can not be empty');
+    isError = true;
+  }
+  if (email && email.value.trim() === '') {
+    notifyMessage('Email can not be empty');
+    isError = true;
+  }
+  if (password && password.value.trim() === '') {
+    notifyMessage('Password can not be empty');
+    isError = true;
+  }
+  if (confirmPassword && confirmPassword.value.trim() === '') {
+    notifyMessage('Confirm password can not be empty');
+    isError = true;
+  }
+
+  if (isError){
+    return false;
+  }
+
+  this.submit();
+}
+
+if(signUpForm){
+  signUpForm.addEventListener('submit', onSubmitSignUpForm);
+}
