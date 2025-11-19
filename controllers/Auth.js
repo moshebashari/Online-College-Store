@@ -13,24 +13,25 @@ const signUpForm = async (req, res) => {
         result.status = false;
     }
 
+    let user = null;
     try {
         const encryptedPassword = await bcrypt.hash(password, saltRounds)
         const today = new Date();
-        await User.create({
+        user = await User.create({
             username,
             email,
             password: encryptedPassword,
             createdAt: today,
             updatedAt: today
         })
-        result.message = 'User has been registered successfully';
+        result.message = 'You have been registered successfully';
         result.status = true;
     } catch (error) {
         result.message = error.message;
         result.status = false;
     }
-    console.log(result.message)
-    res.cookie('signup', JSON.stringify(result));
+    // res.cookie('signup', JSON.stringify(result));
+    req.session.user = user;
     res.redirect('/');
 }
 
@@ -38,7 +39,13 @@ const logInForm = async (req, res) => {
 
 }
 
+const logOut = async (request, response) => {
+    await request.session.destroy();
+    response.redirect('/');
+}
+
 module.exports = {
     signUpForm,
-    logInForm
+    logInForm,
+    logOut
 }

@@ -845,6 +845,29 @@ const sendEmail = () => {
       );
     });
 };
+// -------------------------------- My functions ----------------------------------
+
+function getCookie(name) {
+  const nameEQ = name + "=";
+  const ca = document.cookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) === ' ') { // Remove leading spaces
+      c = c.substring(1, c.length);
+    }
+    if (c.indexOf(nameEQ) === 0) { // Check if this cookie starts with the desired name
+      return c.substring(nameEQ.length, c.length); // Return the cookie's value
+    }
+  }
+  return null; // Return null if the cookie is not found
+}
+
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
 
 const contactFormMain = document.querySelector('#contact-form');
 function onSubmitForm(event) {
@@ -906,3 +929,20 @@ function onSubmitSignUpForm(event) {
 if(signUpForm){
   signUpForm.addEventListener('submit', onSubmitSignUpForm);
 }
+
+
+function onLoadPage(){
+    const signup = getCookie('signup');
+    if(signup){
+
+      const decodedCookieSignUp = decodeURIComponent(signup);
+      const signupObject = JSON.parse(decodedCookieSignUp);
+      // {status: true, message: '', action: 'signup'}
+
+      if(signupObject && signupObject.status && signupObject.action === 'signup'){
+        notifyMessage(signupObject.message);
+      }
+      setCookie('signup', null , 0);
+    }
+}
+document.addEventListener('DOMContentLoaded', onLoadPage)
