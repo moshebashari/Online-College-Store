@@ -6,7 +6,7 @@ router.get('/', HomeController.homePage);
 
 router.get('/contact-us', HomeController.contactUsPage);
 
-router.get('/api/contact-us', HomeController.contactUsPageAPI);
+router.get('/search', HomeController.searchPage)
 
 
 module.exports = router;

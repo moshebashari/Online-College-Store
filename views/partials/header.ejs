@@ -56,19 +56,19 @@
     <div class="bg-primary-700">
       <div class="container mx-auto grid h-full grid-cols-4 gap-1 px-2 py-5 sm:px-8 lg:grid-cols-12 lg:gap-0">
         <div class="order-1 col-span-2 self-center lg:order-1 lg:col-span-3">
-          <a href="/">
+          <!-- <a href="/">
             <img class="inline" src="/img/logo.png" alt="logo" />
-          </a>
+          </a> -->
         </div>
         <div
           class="header-search order-3 col-span-4 mt-[10px] hidden self-center transition-all duration-300 lg:order-2 lg:col-span-6 lg:mt-0 lg:block">
-          <form class="search" action="#">
+          <form class="search" id="main-search" action="/search">
             <div class="flex h-[40px] overflow-hidden rounded-[50px] bg-primary-600/40">
               <input
                 class="search w-full border-none bg-transparent py-[5px] pl-5 text-white placeholder-slate-300 focus:border-none focus:ring-0 focus:ring-transparent"
-                type="search" placeholder="Search..." />
-              <button class="btn-search px-3 text-white" type="submit">
-                <i class="bi bi-search flex text-xl"></i>
+                type="search" placeholder="Search..." id="main-search-input" name="keyword"/>
+              <button id="main-search-btn" class="btn-search px-3 text-white" type="submit">
+                <i  class="bi bi-search flex text-xl"></i>
               </button>
             </div>
           </form>

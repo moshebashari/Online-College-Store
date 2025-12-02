@@ -4192,3 +4192,32 @@ input[type="number"] {
     padding-right: 1rem;
   }
 }
+
+#main-search{
+  position: relative;
+}
+
+.main-search-results{
+  border-radius: 10px;
+  width: 100%;
+  position: absolute;
+  background-color: white;
+  z-index: 10;
+}
+
+
+.search-result-line{
+  padding: 7px 15px;
+}
+
+.search-result-line:hover{
+  background-color: #edf8ff;
+}
+
+.search-result-line:first-child{
+  border-radius: 10px 10px 0 0;
+}
+
+.search-result-line:last-child{
+  border-radius: 0 0 10px 10px;
+}

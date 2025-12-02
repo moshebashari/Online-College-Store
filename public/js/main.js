@@ -946,3 +946,37 @@ function onLoadPage(){
     }
 }
 document.addEventListener('DOMContentLoaded', onLoadPage)
+
+const mainSearchInput = document.getElementById('main-search-input');
+
+async function onSearchInputChange(e){
+  const value = e.target.value;
+  let resultsList = document.querySelector('.main-search-results');
+  if (resultsList){
+    resultsList.remove();
+  }
+  if (value.length < 2) return;
+  const encodeUri = encodeURIComponent(value)
+  // console.log(encodeUri)
+  const results = await fetch(`/api/search?value=${encodeUri}`).then(res => res.json());
+  // console.log(results);
+  if (results.length === 0) return
+  const mainSearch = document.getElementById('main-search');
+  resultsList = document.createElement('ul');
+  resultsList.className = 'main-search-results';
+  mainSearch.appendChild(resultsList);
+  for (let result of results){
+    const line = document.createElement('li');
+    line.className = 'search-result-line';
+    const url = document.createElement('a');
+    url.className = 'search-result-line-url';
+    url.textContent = result.name;
+    url.setAttribute('href', `/product/${result.id}`);
+    line.appendChild(url);
+    resultsList.appendChild(line);
+  }
+}
+
+if (mainSearchInput){
+  mainSearchInput.addEventListener('input', onSearchInputChange)
+}

@@ -16,8 +16,8 @@ module.exports = (sequelizez, DataTypes) => {
         tableName: 'categories'
     })
 
-    Category.associate = (models) => {
-        models.Category.belongsTo(models.ProductCategories, { foreignKey: 'category_id' });
-    }
+    // Category.associate = (models) => {
+    //     models.Category.belongsTo(models.ProductCategories, { foreignKey: 'category_id' });
+    // }
     return Category
 }

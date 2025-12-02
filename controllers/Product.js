@@ -6,7 +6,7 @@ const showProducts = (request, response) => {
 }
 
 const productPage = async (request, response) => {
-    // console.log(request)
+
     try {
         const id = parseInt(request.params.productId);
         console.log(id)
@@ -40,7 +40,7 @@ const productPage = async (request, response) => {
         //     ...p['_previousDataValues'],
         //     url: p['_previousDataValues']['images'][0]
         // }));
-        console.log('products', product);
+        // console.log('products', product);
         response.render('Product-details', {
             product
         });
@@ -48,7 +48,6 @@ const productPage = async (request, response) => {
     catch (err) {
         console.log(err.message);
     }
-    response.render('product-details');
 }
 
 
