@@ -1,42 +1,6 @@
 {
-  "name": "college-online-store",
-  "version": "1.0.0",
-  "description": "The best online store for computer hardware.\r The website of the store is:\r ivory.co.il",
-  "main": "app.js",
-  "scripts": {
-    "start": "nodemon app.js",
-    "init": "npx sequelize db:create && npx sequelize db:migrate && sequelize db:seed:all",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/web-master-college/College-Online-Store.git"
-  },
-  "keywords": [
-    "Store",
-    "Online",
-    "Store"
-  ],
-  "author": "Shachar",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/web-master-college/College-Online-Store/issues"
-  },
-  "homepage": "https://github.com/web-master-college/College-Online-Store#readme",
   "dependencies": {
-    "bcrypt": "^6.0.0",
-    "body-parser": "^2.2.0",
-    "chalk": "^5.4.1",
-    "connect-session-sequelize": "^8.0.2",
-    "cookie-parser": "^1.4.7",
-    "ejs": "^3.1.10",
-    "express": "^5.1.0",
-    "express-session": "^1.18.2",
-    "mysql2": "^3.14.2",
-    "sequelize": "^6.37.7",
-    "sequelize-cli": "^6.6.3"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.10"
+    "cors": "^2.8.5",
+    "react-router-dom": "^7.10.0"
   }
 }
