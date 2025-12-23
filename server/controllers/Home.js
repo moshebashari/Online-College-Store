@@ -78,6 +78,7 @@ const searchPage = async (request, response) => {
         //     categories
         // })
         const data = {}
+        data.searchValue = request.query.q;
         data.products = products;
         // data.categories = categories;
         response.json(data);

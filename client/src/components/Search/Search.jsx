@@ -1,15 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
-import BreadCrumbs from '../BreadCrumbs/BreadCrumbs';
-import { fetchCategories } from '../../utils';
-import CategoryBox from './CategoryBox';
 import CategoriesFilter from './CategoriesFilter';
+import ProductCard from '../ProductCard/ProductCard';
 
 
+export default function Search(props) {
 
-export default function Search() {
-   
+
 
     return (
         <>
@@ -19,7 +14,7 @@ export default function Search() {
                         <div className="flex flex-wrap items-center justify-between gap-2">
                             <span className="text-lg">
                                 Results of '
-                                <span className="text-primary-500">notebook</span>
+                                <span className="text-primary-500">{props.searchValue}</span>
                                 '
                             </span>
                             <form>
@@ -72,28 +67,6 @@ export default function Search() {
                                 </label>
                             </div>
                             < CategoriesFilter />
-                            {/* <!-- start categories list --> */}
-                            {/* <div className="mb-5 border-t-2 pt-5">
-                                <div className="see-more relative pb-5">
-                                    <div
-                                        className="see-more-container gradient-bottom max-h-[220px] overflow-hidden">
-                                        <div className="see-more-content">
-                                            <span className="mb-2 flex font-semibold">Categories</span>
-                                            {/* <!-- start category --> */}
-                                            {/* {cate.map(category => <CategoryBox category={category}/>)} */}
-                                            {/* <!-- end category --> */}
-                                           
-                                        {/* </div>
-                                    </div>
-                                    <button
-                                        className="btn-see-more absolute bottom-0 z-10 flex w-full justify-center hover:text-primary-500"
-                                        type="button">
-                                        <i
-                                            className="bi bi-chevron-compact-down flex text-xl transition-all duration-300"></i>
-                                    </button>
-                                </div>
-                            </div> */} 
-                            {/* <!-- end categories list --> */}
                             {/* <!-- start brands list --> */}
                             {/* <!-- <div className="mb-5 border-t-2 pt-5">
               <span className="mb-2 flex font-semibold">Brands</span>
@@ -165,7 +138,7 @@ export default function Search() {
             </div> --> */}
                             {/* <!-- end brands list --> */}
                             {/* <!-- start colors list --> */}
-                            {/* <!-- <div className="mb-5 border-t-2 pt-5">
+                            {/* <div className="mb-5 border-t-2 pt-5">
               <span className="mb-2 flex font-semibold">Colors</span>
               <div className="product-colors block">
                 <div className="mt-2 flex gap-2">
@@ -208,7 +181,7 @@ export default function Search() {
                   </div>
                 </div>
               </div>
-            </div> --> */}
+            </div> */}
                             {/* <!-- end color list --> */}
                             <div className="border-t-2 pt-5">
                                 <span className="mb-2 flex font-semibold">Price range</span>
@@ -234,349 +207,13 @@ export default function Search() {
                     <div className="col-span-12 md:col-span-8 lg:col-span-8 xl:col-span-9">
                         <div className="grid grid-cols-12 gap-5">
                             {/* <!-- start first prodcut --> */}
-                            {/* <% for(var product of products){ %> */}
-                            <div className="col-span-12 h-auto sm:col-span-6 lg:col-span-4">
-                                <div
-                                    className="card-container relative flex h-full flex-col overflow-hidden rounded-lg bg-white p-5 shadow-md transition-all duration-300 hover:z-[2] hover:-translate-y-2 hover:shadow-xl">
-                                    <div className="absolute right-[10px] top-[10px]">
-                                        <div className="p-[2px]">
-                                            <a
-                                                className="tippy tippy-left-wishlist wishlist-button flex h-9 w-9 cursor-pointer items-center justify-center gap-2 rounded-lg bg-black/30 transition-all duration-300 hover:bg-primary-400"
-                                                href="javascript:void(0)">
-                                                <i
-                                                    className="bi bi-heart pointer-events-none flex text-white"></i>
-                                            </a>
-                                        </div>
-                                        <div className="p-[2px]">
-                                            <a
-                                                className="tippy tippy-left-card-view flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg bg-black/30 transition-all duration-300 hover:bg-primary-400"
-                                                href="javascript:void(0)"
-                                                data-target=" .modal-quick">
-                                                <i
-                                                    className="bi bi-eye pointer-events-none flex text-xl text-white"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    {/* <!-- start: Only if we have discount --> */}
-                                    {/* <!-- <div
-                  className="absolute left-0 top-0 flex h-[35px] w-[90px] items-center justify-center rounded-br-lg bg-primary-500">
-                  <span
-                    className="text-md text-center font-semibold uppercase text-white">
-                    25% Off
-                  </span>
-                </div> --> */}
-                                    {/* <!-- end: Only if we have discount --> */}
-                                    <div className="h-[190px] overflow-hidden rounded-lg">
-                                        <a href="#">
-                                            <img
-                                                className="h-full w-full object-contain"
-                                                // src={product.images[0].url}
-                                                alt="product" />
-                                        </a>
-                                    </div>
-                                    {/* <!-- start: instock or not --> */}
-                                    <div className="my-2 flex justify-between">
-                                        <div className="my-2" data-rater="5"></div>
-                                        <div>
-                                            <span
-                                                className="relative z-[4] rounded-md bg-green-300 px-2 py-1 text-xs font-bold uppercase text-white">
-                                                {/* <%= product.stock > 0 ? 'instock' : 'outofstock' %> */}
-                                            </span>
-                                        </div>
-                                    </div>
-                                    {/* <!-- end: instock or not --> */}
-                                    <div className="my-1">
-                                        <a className="line-clamp-1break-all font-medium" href="#">
-                                            {/* <%= product.name %> */}
-                                        </a>
-                                    </div>
-                                    <div className="my-1">
-                                        <p className="line-clamp-2 text-sm text-gray-400">
-                                            {/* <%= product.description %> */}
-                                        </p>
-                                    </div>
-                                    {/* <!--                 
-                <div className="my-2 flex gap-2">
-                  <span className="font-bold">Size:</span>
-                  <ul className="flex gap-3">
-                    <li>S</li>
-                    <li>M</li>
-                    <li>L</li>
-                    <li>XL</li>
-                  </ul>
-                </div>
-                <div className="my-2 flex gap-2">
-                  <div className="block h-3 w-3 rounded-full bg-blue-600"></div>
-                  <div className="block h-3 w-3 rounded-full bg-red-600"></div>
-                  <div className="block h-3 w-3 rounded-full bg-yellow-600"></div>
-                  <div className="block h-3 w-3 rounded-full bg-black"></div>
-                </div> --> */}
-                                    <div className="my-1">
-                                        {/* <span className="text-lg font-bold"><%= product.price %>&#8362;</span> */}
-                                        {/* <!-- <span className="text-sm text-primary-500 line-through">
-                    $50.00
-                  </span> --> */}
-                                    </div>
-                                    <div className="mt-auto">
-                                        <a
-                                            className="relative flex w-full items-center justify-center overflow-hidden rounded-lg bg-primary-500 p-2 transition-all duration-300 after:absolute after:left-2/4 after:top-2/4 after:h-0 after:w-0 after:rounded-lg after:bg-primary-400 after:transition-all after:duration-300 after:content-[''] hover:after:left-0 hover:after:top-0 hover:after:z-[3] hover:after:h-full hover:after:w-full"
-                                            href="/product/<%= product.id %>">
-                                            <span className="relative z-[4] font-bold uppercase text-white">
-                                                View details
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* <%  } %> */}
-                            {/* <!-- end first product --> */}
-                            {/* <!--              
-            <div className="col-span-12 h-auto sm:col-span-6 lg:col-span-4">
-              <div
-                className="card-container relative flex h-full flex-col overflow-hidden rounded-lg bg-white p-5 shadow-md transition-all duration-300 hover:z-[2] hover:-translate-y-2 hover:shadow-xl">
-                <div className="absolute right-[10px] top-[10px]">
-                  <div className="p-[2px]">
-                    <a
-                      className="tippy tippy-left-wishlist wishlist-button flex h-9 w-9 cursor-pointer items-center justify-center gap-2 rounded-lg bg-black/30 transition-all duration-300 hover:bg-primary-400"
-                      href="javascript:void(0)">
-                      <i
-                        className="bi bi-heart pointer-events-none flex text-white"></i>
-                    </a>
-                  </div>
-                  <div className="p-[2px]">
-                    <a
-                      className="tippy tippy-left-card-view flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg bg-black/30 transition-all duration-300 hover:bg-primary-400"
-                      href="javascript:void(0)"
-                      data-target=" .modal-quick">
-                      <i
-                        className="bi bi-eye pointer-events-none flex text-xl text-white"></i>
-                    </a>
-                  </div>
-                </div>
-                <div className="h-[190px] overflow-hidden rounded-lg">
-                  <a href="#">
-                    <img
-                      className="h-full w-full object-contain"
-                      src="img/cards/notebooks/note_2.jpg"
-                      alt="product" />
-                  </a>
-                </div>
-                <div className="my-2 flex justify-between">
-                  <div className="my-2" data-rater="5"></div>
-                  <div>
-                    <span
-                      className="relative z-[4] rounded-md bg-green-300 px-2 py-1 text-xs font-bold uppercase text-white">
-                      instock
-                    </span>
-                  </div>
-                </div>
-                <div className="my-1">
-                  <a className="line-clamp-1break-all font-medium" href="#">
-                    Asus ZenBook 14
-                  </a>
-                </div>
-                <div className="my-1">
-                  <p className="line-clamp-2 text-sm text-gray-400">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Itaque culpa, odio, qui praesentium dignissimos eaque
-                    dolorum porro alias neque, eius animi ipsa voluptates. Optio
-                    repellat tempora voluptas, dolores ipsam ad!
-                  </p>
-                </div>
-                <div className="my-2 flex gap-2">
-                  <span className="font-bold">Size:</span>
-                  <ul className="flex gap-3">
-                    <li>S</li>
-                    <li>M</li>
-                    <li>L</li>
-                    <li>XL</li>
-                  </ul>
-                </div>
-                <div className="my-2 flex gap-2">
-                  <div className="block h-3 w-3 rounded-full bg-blue-600"></div>
-                  <div className="block h-3 w-3 rounded-full bg-red-600"></div>
-                  <div className="block h-3 w-3 rounded-full bg-yellow-600"></div>
-                  <div className="block h-3 w-3 rounded-full bg-black"></div>
-                </div>
-                <div className="my-1">
-                  <span className="text-lg font-bold">$37.00</span>
-                </div>
-                <div className="mt-auto">
-                  <a
-                    className="relative flex w-full items-center justify-center overflow-hidden rounded-lg bg-primary-500 p-2 transition-all duration-300 after:absolute after:left-2/4 after:top-2/4 after:h-0 after:w-0 after:rounded-lg after:bg-primary-400 after:transition-all after:duration-300 after:content-[''] hover:after:left-0 hover:after:top-0 hover:after:z-[3] hover:after:h-full hover:after:w-full"
-                    href="#">
-                    <span className="relative z-[4] font-bold uppercase text-white">
-                      View details
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-span-12 h-auto sm:col-span-6 lg:col-span-4">
-              <div
-                className="card-container relative flex h-full flex-col overflow-hidden rounded-lg bg-white p-5 shadow-md transition-all duration-300 hover:z-[2] hover:-translate-y-2 hover:shadow-xl">
-                <div className="absolute right-[10px] top-[10px]">
-                  <div className="p-[2px]">
-                    <a
-                      className="tippy tippy-left-wishlist wishlist-button flex h-9 w-9 cursor-pointer items-center justify-center gap-2 rounded-lg bg-black/30 transition-all duration-300 hover:bg-primary-400"
-                      href="javascript:void(0)">
-                      <i
-                        className="bi bi-heart pointer-events-none flex text-white"></i>
-                    </a>
-                  </div>
-                  <div className="p-[2px]">
-                    <a
-                      className="tippy tippy-left-card-view flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg bg-black/30 transition-all duration-300 hover:bg-primary-400"
-                      href="javascript:void(0)"
-                      data-target=" .modal-quick">
-                      <i
-                        className="bi bi-eye pointer-events-none flex text-xl text-white"></i>
-                    </a>
-                  </div>
-                </div>
-                <div className="h-[190px] overflow-hidden rounded-lg">
-                  <a href="#">
-                    <img
-                      className="h-full w-full object-contain"
-                      src="img/cards/notebooks/note_3.jpg"
-                      alt="product" />
-                  </a>
-                </div>
-                <div className="my-2 flex justify-between">
-                  <div className="my-2" data-rater="5"></div>
-                  <div>
-                    <span
-                      className="relative z-[4] rounded-md bg-green-300 px-2 py-1 text-xs font-bold uppercase text-white">
-                      instock
-                    </span>
-                  </div>
-                </div>
-                <div className="my-1">
-                  <a className="line-clamp-1break-all font-medium" href="#">
-                    Lenovo V15
-                  </a>
-                </div>
-                <div className="my-1">
-                  <p className="line-clamp-2 text-sm text-gray-400">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Itaque culpa, odio, qui praesentium dignissimos eaque
-                    dolorum porro alias neque, eius animi ipsa voluptates. Optio
-                    repellat tempora voluptas, dolores ipsam ad!
-                  </p>
-                </div>
-                <div className="my-2 flex gap-2">
-                  <span className="font-bold">Size:</span>
-                  <ul className="flex gap-3">
-                    <li>S</li>
-                    <li>M</li>
-                    <li>L</li>
-                    <li>XL</li>
-                  </ul>
-                </div>
-                <div className="my-2 flex gap-2">
-                  <div className="block h-3 w-3 rounded-full bg-blue-600"></div>
-                  <div className="block h-3 w-3 rounded-full bg-red-600"></div>
-                  <div className="block h-3 w-3 rounded-full bg-yellow-600"></div>
-                  <div className="block h-3 w-3 rounded-full bg-black"></div>
-                </div>
-                <div className="my-1">
-                  <span className="text-lg font-bold">$37.00</span>
-                </div>
-                <div className="mt-auto">
-                  <a
-                    className="relative flex w-full items-center justify-center overflow-hidden rounded-lg bg-primary-500 p-2 transition-all duration-300 after:absolute after:left-2/4 after:top-2/4 after:h-0 after:w-0 after:rounded-lg after:bg-primary-400 after:transition-all after:duration-300 after:content-[''] hover:after:left-0 hover:after:top-0 hover:after:z-[3] hover:after:h-full hover:after:w-full"
-                    href="#">
-                    <span className="relative z-[4] font-bold uppercase text-white">
-                      View details
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-span-12 h-auto sm:col-span-6 lg:col-span-4">
-              <div
-                className="card-container relative flex h-full flex-col overflow-hidden rounded-lg bg-white p-5 shadow-md transition-all duration-300 hover:z-[2] hover:-translate-y-2 hover:shadow-xl">
-                <div className="absolute right-[10px] top-[10px]">
-                  <div className="p-[2px]">
-                    <a
-                      className="tippy tippy-left-wishlist wishlist-button flex h-9 w-9 cursor-pointer items-center justify-center gap-2 rounded-lg bg-black/30 transition-all duration-300 hover:bg-primary-400"
-                      href="javascript:void(0)">
-                      <i
-                        className="bi bi-heart pointer-events-none flex text-white"></i>
-                    </a>
-                  </div>
-                  <div className="p-[2px]">
-                    <a
-                      className="tippy tippy-left-card-view flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg bg-black/30 transition-all duration-300 hover:bg-primary-400"
-                      href="javascript:void(0)"
-                      data-target=" .modal-quick">
-                      <i
-                        className="bi bi-eye pointer-events-none flex text-xl text-white"></i>
-                    </a>
-                  </div>
-                </div>
-                <div className="h-[190px] overflow-hidden rounded-lg">
-                  <a href="#">
-                    <img
-                      className="h-full w-full object-contain"
-                      src="img/cards/notebooks/note_4.jpg"
-                      alt="product" />
-                  </a>
-                </div>
-                <div className="my-2 flex justify-between">
-                  <div className="my-2" data-rater="5"></div>
-                  <div>
-                    <span
-                      className="relative z-[4] rounded-md bg-green-300 px-2 py-1 text-xs font-bold uppercase text-white">
-                      instock
-                    </span>
-                  </div>
-                </div>
-                <div className="my-1">
-                  <a className="line-clamp-1break-all font-medium" href="#">
-                    HP 255 G7
-                  </a>
-                </div>
-                <div className="my-1">
-                  <p className="line-clamp-2 text-sm text-gray-400">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Itaque culpa, odio, qui praesentium dignissimos eaque
-                    dolorum porro alias neque, eius animi ipsa voluptates. Optio
-                    repellat tempora voluptas, dolores ipsam ad!
-                  </p>
-                </div>
-                <div className="my-2 flex gap-2">
-                  <span className="font-bold">Size:</span>
-                  <ul className="flex gap-3">
-                    <li>S</li>
-                    <li>M</li>
-                    <li>L</li>
-                    <li>XL</li>
-                  </ul>
-                </div>
-                <div className="my-2 flex gap-2">
-                  <div className="block h-3 w-3 rounded-full bg-blue-600"></div>
-                  <div className="block h-3 w-3 rounded-full bg-red-600"></div>
-                  <div className="block h-3 w-3 rounded-full bg-yellow-600"></div>
-                  <div className="block h-3 w-3 rounded-full bg-black"></div>
-                </div>
-                <div className="my-1">
-                  <span className="text-lg font-bold">$37.00</span>
-                </div>
-                <div className="mt-auto">
-                  <a
-                    className="relative flex w-full items-center justify-center overflow-hidden rounded-lg bg-primary-500 p-2 transition-all duration-300 after:absolute after:left-2/4 after:top-2/4 after:h-0 after:w-0 after:rounded-lg after:bg-primary-400 after:transition-all after:duration-300 after:content-[''] hover:after:left-0 hover:after:top-0 hover:after:z-[3] hover:after:h-full hover:after:w-full"
-                    href="#">
-                    <span className="relative z-[4] font-bold uppercase text-white">
-                      View details
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div> -->
-             */}
+                            {props.products ? props.products.map(product =>
+                                <div className="col-span-12 h-auto sm:col-span-6 lg:col-span-4" key={product.id}>
+                                    <ProductCard product={product} />
+                                </div>) : <h1>No Products Found</h1>}
                         </div>
                     </div>
+                    {/* start pages numbers */}
                     <div className="col-span-12">
                         <div className="flex items-center justify-center">
                             <ul className="pagination flex items-center">
@@ -598,6 +235,7 @@ export default function Search() {
                             </ul>
                         </div>
                     </div>
+                    {/* end pages numbers */}
                 </div>
             </div>
 
@@ -1154,7 +792,7 @@ export default function Search() {
                 </div>
             </div>
 
-            <div className="modal-quick modal-container modal-overlay">
+            {/* <div className="modal-quick modal-container modal-overlay">
                 <div className="modal-content modal-center flex w-[900px] min-w-[250px]">
                     <div
                         className="relative m-4 flex w-full flex-col rounded-lg bg-[#f3f3f3] p-5 lg:m-10">
@@ -1433,7 +1071,7 @@ export default function Search() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
             {/* <!-- --> */}
 
             <div

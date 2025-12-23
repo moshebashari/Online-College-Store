@@ -1,0 +1,2215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="./img/favicon.ico" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="./lib/rater-js/rater-js.css" />
+  <link rel="stylesheet" href="./lib/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./lib/metisMenu/metismenujs.min.css" />
+  <link rel="stylesheet" href="./lib/nice-select2/nice-select2.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <title>Megabyte - Shop Grid</title>
+</head>
+
+<body class="overflow-hidden">
+  <header class="relative z-10 shadow-[0_2px_10px_rgba(131,125,125,0.50)]">
+    <div class="hidden bg-primary-700 sm:flex">
+      <div class="container mx-auto grid h-full grid-cols-12 px-2 py-[6px] sm:px-8">
+        <div class="col-span-10 self-center">
+          <div class="flex gap-[15px]">
+            <div class="flex items-center gap-2">
+              <i class="bi bi-envelope flex text-2xl text-primary-500"></i>
+              <a href="#" class="font-light text-white">
+                megabyte@example.com
+              </a>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="bi bi-telephone flex text-xl text-primary-500"></i>
+              <a href="#" class="font-light text-white">
+                (+54) 2284-123456789
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-2 self-center justify-self-end">
+          <div class="flex items-center gap-[10px]">
+            <a href="#">
+              <i class="bi bi-instagram flex text-white/50 transition-all duration-300 hover:text-white"></i>
+            </a>
+            <a href="#">
+              <i class="bi bi-facebook flex text-white/50 transition-all duration-300 hover:text-white"></i>
+            </a>
+            <a href="#">
+              <i class="bi bi-twitter-x flex text-white/50 transition-all duration-300 hover:text-white"></i>
+            </a>
+            <a href="#">
+              <i class="bi bi-youtube flex text-white/50 transition-all duration-300 hover:text-white"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-primary-700">
+      <div class="container mx-auto grid h-full grid-cols-4 gap-1 px-2 py-5 sm:px-8 lg:grid-cols-12 lg:gap-0">
+        <div class="order-1 col-span-2 self-center lg:order-1 lg:col-span-3">
+          <a href="index.html">
+            <img class="inline" src="img/logo.png" alt="logo" />
+          </a>
+        </div>
+        <div
+          class="header-search order-3 col-span-4 mt-[10px] hidden self-center transition-all duration-300 lg:order-2 lg:col-span-6 lg:mt-0 lg:block">
+          <form class="search" action="#">
+            <div class="flex h-[40px] overflow-hidden rounded-[50px] bg-primary-600/40">
+              <input
+                class="search w-full border-none bg-transparent py-[5px] pl-5 text-white placeholder-slate-300 focus:border-none focus:ring-0 focus:ring-transparent"
+                type="search" placeholder="Search..." />
+              <button class="btn-search px-3 text-white" type="submit">
+                <i class="bi bi-search flex text-xl"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="order-2 col-span-2 flex gap-2 self-center justify-self-end lg:order-3 lg:col-span-3 xl:gap-5">
+          <div class="flex items-center lg:hidden">
+            <button class="btn-search-mob p-[5px] text-white">
+              <i class="bi bi-search pointer-events-none flex text-2xl"></i>
+            </button>
+          </div>
+          <div class="flex items-center lg:hidden">
+            <button class="text-white" data-target=".modal-menu">
+              <i class="bi bi-list pointer-events-none flex text-3xl"></i>
+            </button>
+          </div>
+          <div class="group-items hidden items-center gap-5 text-white lg:flex">
+            <div class="relative">
+              <a data-target=".modal-wishlist" href="javascript:void(0)">
+                <i class="bi bi-heart pointer-events-none flex translate-y-1 transform text-[32px] text-white"></i>
+              </a>
+              <span
+                class="absolute right-[-6px] top-0 flex h-[15px] min-w-[15px] items-center justify-center rounded-xl bg-primary-500 px-[2px] text-xs text-white">
+                0
+              </span>
+            </div>
+            <div class="relative">
+              <a data-target=".modal-cart" href="javascript:void(0)">
+                <i class="bi bi-cart2 pointer-events-none flex text-[35px] text-white"></i>
+              </a>
+              <span
+                class="absolute right-[-6px] top-0 flex h-[15px] min-w-[15px] items-center justify-center rounded-xl bg-primary-500 px-[2px] text-xs text-white">
+                0
+              </span>
+            </div>
+          </div>
+          <div class="group relative hidden lg:flex">
+            <div class="flex cursor-pointer select-none items-center gap-1">
+              <span class="font-semibold text-white">My account</span>
+              <i
+                class="bi bi-caret-down-fill flex rotate-0 text-sm text-white transition-all duration-300 group-hover:rotate-180"></i>
+            </div>
+            <div
+              class="invisible absolute top-full z-30 w-[120%] pt-[10px] opacity-0 transition-all duration-300 group-hover:visible group-hover:opacity-100">
+              <ul
+                class="relative rounded-md bg-white p-[6px] shadow-[0_2px_10px_rgba(131,125,125,0.50)] after:absolute after:bottom-full after:left-[10px] after:h-0 after:w-0 after:border-b-[13px] after:border-l-[13px] after:border-r-[13px] after:border-b-white after:border-l-transparent after:border-r-transparent after:content-['']">
+                <li class="hover:font-semibold">
+                  <a href="#" data-tab="0" data-target=".modal-entry">
+                    <div class="pointer-events-none flex items-center gap-2 p-1">
+                      <i class="bi bi-box-arrow-in-right flex text-xl text-primary-500"></i>
+                      <span class="relative z-[4]">Login</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="hover:font-semibold">
+                  <a href="#" data-tab="1" data-target=".modal-entry">
+                    <div class="pointer-events-none flex items-center gap-2 p-1">
+                      <i class="bi bi-person flex text-xl text-primary-500"></i>
+                      <span>Sign up</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hidden bg-white lg:block">
+      <nav class="container mx-auto px-2 sm:px-8">
+        <ul class="menu flex flex-wrap items-center justify-between py-[10px] text-lg">
+          <li
+            class="group relative cursor-pointer after:absolute after:-bottom-[5px] after:left-0 after:right-0 after:h-1 after:w-full after:origin-center after:scale-x-0 after:rounded-lg after:bg-primary-500 after:transition-transform after:duration-200 after:content-[''] hover:after:scale-x-100">
+            <a href="#" class="flex items-center gap-1 font-semibold">
+              <span>Products</span>
+              <i
+                class="bi bi-caret-down-fill flex rotate-0 text-xs text-primary-500 transition-all duration-300 group-hover:rotate-180"></i>
+            </a>
+            <div
+              class="invisible absolute left-0 pt-[10px] opacity-0 transition-all duration-300 group-hover:visible group-hover:opacity-100">
+              <ul class="relative w-[250px] bg-white text-base shadow-[0_2px_10px_rgba(131,125,125,0.50)]">
+                <li class="group/item">
+                  <a href="#" class="flex items-center gap-2 p-2">
+                    <i
+                      class="bi bi-circle-fill invisible flex text-[6px] text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+                    <span class="group-hover/item:font-semibold">
+                      Pc components
+                    </span>
+                    <i
+                      class="bi bi-caret-right-fill invisible ml-auto flex text-xs text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+                  </a>
+                  <div
+                    class="invisible absolute left-full top-0 min-h-full min-w-[680px] opacity-0 transition-all duration-300 group-hover/item:visible group-hover/item:opacity-100">
+                    <div class="bg-white shadow-custom-2">
+                      <div class="border-b-2 border-primary-500 py-[10px]">
+                        <span class="px-5 text-3xl font-bold uppercase text-primary-500">
+                          Pc components
+                        </span>
+                      </div>
+                      <div class="-categories flex flex-wrap">
+                        <div class="group/edit p-[10px]">
+                          <a class="categorie-container inline-block" href="#">
+                            <div class="categorie-img h-[150px] w-[150px]">
+                              <img
+                                class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+                                src="img/categories/pc_components/motherboards.jpg" alt="motherboard" />
+                            </div>
+                            <span class="block text-center group-hover/edit:font-semibold">
+                              Motherboards
+                            </span>
+                          </a>
+                        </div>
+                        <div class="group/edit p-[10px]">
+                          <a class="categorie-container inline-block" href="#">
+                            <div class="categorie-img h-[150px] w-[150px]">
+                              <img
+                                class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+                                src="img/categories/pc_components/processors.jpg" alt="processors" />
+                            </div>
+                            <span class="block text-center group-hover/edit:font-semibold">
+                              Processors
+                            </span>
+                          </a>
+                        </div>
+                        <div class="group/edit p-[10px]">
+                          <a class="categorie-container inline-block" href="#">
+                            <div class="categorie-img h-[150px] w-[150px]">
+                              <img
+                                class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+                                src="img/categories/pc_components/rams.jpg" alt="rams" />
+                            </div>
+                            <span class="block text-center group-hover/edit:font-semibold">
+                              RAMS
+                            </span>
+                          </a>
+                        </div>
+                        <div class="group/edit p-[10px]">
+                          <a class="categorie-container inline-block" href="#">
+                            <div class="categorie-img h-[150px] w-[150px]">
+                              <img
+                                class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+                                src="img/categories/pc_components/video_cards.jpg" alt="video cards" />
+                            </div>
+                            <span class="block text-center group-hover/edit:font-semibold">
+                              Video Cards
+                            </span>
+                          </a>
+                        </div>
+                        <div class="group/edit p-[10px]">
+                          <a class="categorie-container inline-block" href="#">
+                            <div class="categorie-img h-[150px] w-[150px]">
+                              <img
+                                class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+                                src="img/categories/pc_components/power_supplys.jpg" alt="video cards" />
+                            </div>
+                            <span class="block object-contain text-center group-hover/edit:font-semibold">
+                              Power Supplys
+                            </span>
+                          </a>
+                        </div>
+                        <div class="group/edit p-[10px]">
+                          <a class="categorie-container inline-block" href="#">
+                            <div class="categorie-img h-[150px] w-[150px]">
+                              <img
+                                class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+                                src="img/categories/pc_components/hard_drives.jpg" alt="video cards" />
+                            </div>
+                            <span class="block text-center group-hover/edit:font-semibold">
+                              Hard Drives
+                            </span>
+                          </a>
+                        </div>
+                        <div class="group/edit p-[10px]">
+                          <a class="categorie-container inline-block" href="#">
+                            <div class="categorie-img h-[150px] w-[150px]">
+                              <img
+                                class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+                                src="img/categories/pc_components/ssd_disk.jpg" alt="video cards" />
+                            </div>
+                            <span class="block text-center group-hover/edit:font-semibold">
+                              SSD Disk
+                            </span>
+                          </a>
+                        </div>
+                        <div class="group/edit p-[10px]">
+                          <a class="categorie-container inline-block" href="#">
+                            <div class="categorie-img h-[150px] w-[150px]">
+                              <img
+                                class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+                                src="img/categories/pc_components/computer_case.jpg" alt="video cards" />
+                            </div>
+                            <span class="block text-center group-hover/edit:font-semibold">
+                              Case
+                            </span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="group/item">
+                  <a href="#" class="flex items-center gap-2 p-2">
+                    <i
+                      class="bi bi-circle-fill invisible flex text-[6px] text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+                    <span class="group-hover/item:font-semibold">
+                      Peripherals
+                    </span>
+                    <i
+                      class="bi bi-caret-right-fill invisible ml-auto flex text-xs text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+                  </a>
+                  <div
+                    class="invisible absolute left-full top-0 min-h-full min-w-[680px] opacity-0 transition-all duration-300 group-hover/item:visible group-hover/item:opacity-100">
+                    <div class="bg-white shadow-custom-2">
+                      <div class="border-b-2 border-primary-500 py-[10px]">
+                        <span class="px-5 text-3xl font-bold uppercase text-primary-500">
+                          Peripherals
+                        </span>
+                      </div>
+                      <div class="-categories flex flex-wrap">
+                        <div class="group/edit p-[10px]">
+                          <a class="categorie-container inline-block" href="#">
+                            <div class="categorie-img h-[150px] w-[150px]">
+                              <img
+                                class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+                                src="img/categories/peripherals/keywords.jpg" alt="motherboard" />
+                            </div>
+                            <span class="block text-center group-hover/edit:font-semibold">
+                              Keywords
+                            </span>
+                          </a>
+                        </div>
+                        <div class="group/edit p-[10px]">
+                          <a class="categorie-container inline-block" href="#">
+                            <div class="categorie-img h-[150px] w-[150px]">
+                              <img
+                                class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+                                src="img/categories/peripherals/mouse.jpg" alt="processors" />
+                            </div>
+                            <span class="block text-center group-hover/edit:font-semibold">
+                              Mouses
+                            </span>
+                          </a>
+                        </div>
+                        <div class="group/edit p-[10px]">
+                          <a class="categorie-container inline-block" href="#">
+                            <div class="categorie-img h-[150px] w-[150px]">
+                              <img
+                                class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+                                src="img/categories/peripherals/mic.jpg" alt="rams" />
+                            </div>
+                            <span class="block text-center group-hover/edit:font-semibold">
+                              Mics
+                            </span>
+                          </a>
+                        </div>
+                        <div class="group/edit p-[10px]">
+                          <a class="categorie-container inline-block" href="#">
+                            <div class="categorie-img h-[150px] w-[150px]">
+                              <img
+                                class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+                                src="img/categories/peripherals/webcam.jpg" alt="rams" />
+                            </div>
+                            <span class="block text-center group-hover/edit:font-semibold">
+                              Webcam
+                            </span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="group/item">
+                  <a href="#" class="flex items-center gap-2 p-2">
+                    <i
+                      class="bi bi-circle-fill invisible flex text-[6px] text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+                    <span class="group-hover/item:font-semibold">
+                      Computers
+                    </span>
+                    <i
+                      class="bi bi-caret-right-fill invisible ml-auto flex text-xs text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+                  </a>
+                  <div
+                    class="invisible absolute left-full top-0 min-h-full min-w-[680px] opacity-0 transition-all duration-300 group-hover/item:visible group-hover/item:opacity-100">
+                    <div class="bg-white shadow-custom-2">
+                      <div class="border-b-2 border-primary-500 py-[10px]">
+                        <span class="px-5 text-3xl font-bold uppercase text-primary-500">
+                          Computers
+                        </span>
+                      </div>
+                      <div class="-categories flex flex-wrap">
+                        <div class="group/edit p-[10px]">
+                          <a class="categorie-container inline-block" href="#">
+                            <div class="categorie-img h-[150px] w-[150px]">
+                              <img
+                                class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+                                src="img/categories/computers/desktops.jpg" alt="motherboard" />
+                            </div>
+                            <span class="block text-center group-hover/edit:font-semibold">
+                              Desktops
+                            </span>
+                          </a>
+                        </div>
+                        <div class="group/edit p-[10px]">
+                          <a class="categorie-container inline-block" href="#">
+                            <div class="categorie-img h-[150px] w-[150px]">
+                              <img
+                                class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+                                src="img/categories/computers/notebooks.jpg" alt="processors" />
+                            </div>
+                            <span class="block text-center group-hover/edit:font-semibold">
+                              Notebooks
+                            </span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="group/item">
+                  <a href="#" class="flex items-center gap-2 p-2">
+                    <i
+                      class="bi bi-circle-fill invisible flex text-[6px] text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+                    <span class="group-hover/item:font-semibold">
+                      Monitors
+                    </span>
+                  </a>
+                </li>
+                <li class="group/item">
+                  <a href="#" class="flex items-center gap-2 p-2">
+                    <i
+                      class="bi bi-circle-fill invisible flex text-[6px] text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+                    <span class="group-hover/item:font-semibold">
+                      Printers
+                    </span>
+                  </a>
+                </li>
+                <li class="group/item">
+                  <a href="#" class="flex items-center gap-2 p-2">
+                    <i
+                      class="bi bi-circle-fill invisible flex text-[6px] text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+                    <span class="group-hover/item:font-semibold">Gaming</span>
+                    <i
+                      class="bi bi-caret-right-fill invisible ml-auto flex text-xs text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+                  </a>
+                  <div
+                    class="invisible absolute left-full top-0 min-h-full min-w-[680px] opacity-0 transition-all duration-300 group-hover/item:visible group-hover/item:opacity-100">
+                    <div class="bg-white shadow-custom-2">
+                      <div class="border-b-2 border-primary-500 py-[10px]">
+                        <span class="px-5 text-3xl font-bold uppercase text-primary-500">
+                          Gaming
+                        </span>
+                      </div>
+                      <div class="-categories flex flex-wrap">
+                        <div class="group/edit p-[10px]">
+                          <a class="categorie-container inline-block" href="#">
+                            <div class="categorie-img h-[150px] w-[150px]">
+                              <img
+                                class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+                                src="img/categories/gaming/consoles.jpg" alt="motherboard" />
+                            </div>
+                            <span class="block text-center group-hover/edit:font-semibold">
+                              Consoles
+                            </span>
+                          </a>
+                        </div>
+                        <div class="group/edit p-[10px]">
+                          <a class="categorie-container inline-block" href="#">
+                            <div class="categorie-img h-[150px] w-[150px]">
+                              <img
+                                class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+                                src="img/categories/gaming/games.jpg" alt="processors" />
+                            </div>
+                            <span class="block text-center group-hover/edit:font-semibold">
+                              Games
+                            </span>
+                          </a>
+                        </div>
+                        <div class="group/edit p-[10px]">
+                          <a class="categorie-container inline-block" href="#">
+                            <div class="categorie-img h-[150px] w-[150px]">
+                              <img
+                                class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+                                src="img/categories/gaming/accessories.jpg" alt="processors" />
+                            </div>
+                            <span class="block text-center group-hover/edit:font-semibold">
+                              Accessories
+                            </span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="group/item">
+                  <a href="#" class="flex items-center gap-2 p-2">
+                    <i
+                      class="bi bi-circle-fill invisible flex text-[6px] text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+                    <span class="group-hover/item:font-semibold">
+                      Tablets
+                    </span>
+                  </a>
+                </li>
+                <li class="group/item">
+                  <a href="#" class="flex items-center gap-2 p-2">
+                    <i
+                      class="bi bi-circle-fill invisible flex text-[6px] text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+                    <span class="group-hover/item:font-semibold">
+                      Smartphones
+                    </span>
+                  </a>
+                </li>
+                <li class="group/item">
+                  <a href="#" class="flex items-center gap-2 p-2">
+                    <i
+                      class="bi bi-circle-fill invisible flex text-[6px] text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+                    <span class="group-hover/item:font-semibold">
+                      Software
+                    </span>
+                    <i
+                      class="bi bi-caret-right-fill invisible ml-auto flex text-xs text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+                  </a>
+                  <div
+                    class="invisible absolute left-full top-0 min-h-full min-w-[680px] opacity-0 transition-all duration-300 group-hover/item:visible group-hover/item:opacity-100">
+                    <div class="bg-white shadow-custom-2">
+                      <div class="border-b-2 border-primary-500 py-[10px]">
+                        <span class="px-5 text-3xl font-bold uppercase text-primary-500">
+                          Software
+                        </span>
+                      </div>
+                      <div class="-categories flex flex-wrap">
+                        <div class="group/edit p-[10px]">
+                          <a class="categorie-container inline-block" href="#">
+                            <div class="categorie-img h-[150px] w-[150px]">
+                              <img
+                                class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+                                src="img/categories/software/os.jpg" alt="motherboard" />
+                            </div>
+                            <span class="block text-center group-hover/edit:font-semibold">
+                              Operating System
+                            </span>
+                          </a>
+                        </div>
+                        <div class="group/edit p-[10px]">
+                          <a class="categorie-container inline-block" href="#">
+                            <div class="categorie-img h-[150px] w-[150px]">
+                              <img
+                                class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+                                src="img/categories/software/office.jpg" alt="processors" />
+                            </div>
+                            <span class="block text-center group-hover/edit:font-semibold">
+                              Office Package
+                            </span>
+                          </a>
+                        </div>
+                        <div class="group/edit p-[10px]">
+                          <a class="categorie-container inline-block" href="#">
+                            <div class="categorie-img h-[150px] w-[150px]">
+                              <img
+                                class="h-full w-full object-contain mix-blend-multiply transition-all duration-300 group-hover/edit:scale-110 group-hover/edit:opacity-70"
+                                src="img/categories/software/antivirus.jpg" alt="processors" />
+                            </div>
+                            <span class="block text-center group-hover/edit:font-semibold">
+                              Antivirus
+                            </span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li
+            class="relative cursor-pointer after:absolute after:-bottom-[5px] after:left-0 after:right-0 after:h-1 after:w-full after:origin-center after:scale-x-0 after:rounded-lg after:bg-primary-500 after:transition-transform after:duration-200 after:content-[''] hover:after:scale-x-100">
+            <a href="index.html">Home</a>
+          </li>
+          <li
+            class="group relative cursor-pointer after:absolute after:-bottom-[5px] after:left-0 after:right-0 after:h-1 after:w-full after:origin-center after:scale-x-0 after:rounded-lg after:bg-primary-500 after:transition-transform after:duration-200 after:content-[''] hover:after:scale-x-100">
+            <a href="#" class="flex items-center gap-1">
+              <span>Pages</span>
+              <i
+                class="bi bi-caret-down-fill flex rotate-0 text-xs text-primary-500 transition-all duration-300 group-hover:rotate-180"></i>
+            </a>
+            <div
+              class="invisible absolute left-0 pt-[10px] opacity-0 transition-all duration-300 group-hover:visible group-hover:opacity-100">
+              <ul class="relative w-[250px] bg-white text-base shadow-[0_2px_10px_rgba(131,125,125,0.50)]">
+                <li class="group/item">
+                  <a href="#" class="flex items-center gap-2 p-2">
+                    <i
+                      class="bi bi-circle-fill invisible flex text-[6px] text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+                    <span class="group-hover/item:font-semibold">
+                      Main pages
+                    </span>
+                    <i
+                      class="bi bi-caret-right-fill invisible ml-auto flex text-xs text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+                  </a>
+                  <div
+                    class="invisible absolute left-full top-0 min-h-full min-w-[250px] opacity-0 transition-all duration-300 group-hover/item:visible group-hover/item:opacity-100">
+                    <ul class="bg-white shadow-custom-2">
+                      <li>
+                        <a class="flex p-2 hover:font-semibold" href="about-us.html">
+                          About us
+                        </a>
+                      </li>
+                      <li>
+                        <a class="flex p-2 hover:font-semibold" href="wishlist.html">
+                          Wishlist
+                        </a>
+                      </li>
+                      <li>
+                        <a class="flex p-2 hover:font-semibold" href="shopping-cart.html">
+                          Shopping Cart
+                        </a>
+                      </li>
+                      <li>
+                        <a class="flex p-2 hover:font-semibold" href="product-details.html">
+                          Product Details
+                        </a>
+                      </li>
+                      <li>
+                        <a class="flex p-2 hover:font-semibold" href="checkout.html">
+                          Checkout
+                        </a>
+                      </li>
+                      <li>
+                        <a class="flex p-2 hover:font-semibold" href="shop-mixed.html">
+                          Shop - Mixed
+                        </a>
+                      </li>
+                      <li>
+                        <a class="flex p-2 hover:font-semibold" href="shop-listed.html">
+                          Shop - Listed
+                        </a>
+                      </li>
+                      <li>
+                        <a class="flex p-2 hover:font-semibold" href="shop-grid.html">
+                          Shop - Grid
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="group/item">
+                  <a href="#" class="flex items-center gap-2 p-2">
+                    <i
+                      class="bi bi-circle-fill invisible flex text-[6px] text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+                    <span class="group-hover/item:font-semibold">
+                      Account pages
+                    </span>
+                    <i
+                      class="bi bi-caret-right-fill invisible ml-auto flex text-xs text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+                  </a>
+                  <div
+                    class="invisible absolute left-full top-0 min-h-full min-w-[250px] opacity-0 transition-all duration-300 group-hover/item:visible group-hover/item:opacity-100">
+                    <ul class="bg-white shadow-custom-2">
+                      <li>
+                        <a class="flex p-2 hover:font-semibold" href="my-account.html">
+                          My account
+                        </a>
+                      </li>
+                      <li>
+                        <a class="flex p-2 hover:font-semibold" href="login.html">
+                          Login
+                        </a>
+                      </li>
+                      <li>
+                        <a class="flex p-2 hover:font-semibold" href="sign-up.html">
+                          Sign up
+                        </a>
+                      </li>
+                      <li>
+                        <a class="flex p-2 hover:font-semibold" href="forgot-password.html">
+                          Forgot password
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="group/item">
+                  <a href="#" class="flex items-center gap-2 p-2">
+                    <i
+                      class="bi bi-circle-fill invisible flex text-[6px] text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+                    <span class="group-hover/item:font-semibold">
+                      Purchase statuses
+                    </span>
+                    <i
+                      class="bi bi-caret-right-fill invisible ml-auto flex text-xs text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+                  </a>
+                  <div
+                    class="invisible absolute left-full top-0 min-h-full min-w-[250px] opacity-0 transition-all duration-300 group-hover/item:visible group-hover/item:opacity-100">
+                    <ul class="bg-white shadow-custom-2">
+                      <li>
+                        <a class="flex p-2 hover:font-semibold" href="purchase-completed.html">
+                          Purchase completed
+                        </a>
+                      </li>
+                      <li>
+                        <a class="flex p-2 hover:font-semibold" href="purchase-failed.html">
+                          Purchase failed
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="group/item">
+                  <a href="#" class="flex items-center gap-2 p-2">
+                    <i
+                      class="bi bi-circle-fill invisible flex text-[6px] text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+                    <span class="group-hover/item:font-semibold">
+                      Support and policy
+                    </span>
+                    <i
+                      class="bi bi-caret-right-fill invisible ml-auto flex text-xs text-primary-500 opacity-0 group-hover/item:visible group-hover/item:opacity-100"></i>
+                  </a>
+                  <div
+                    class="invisible absolute left-full top-0 min-h-full min-w-[250px] opacity-0 transition-all duration-300 group-hover/item:visible group-hover/item:opacity-100">
+                    <ul class="bg-white shadow-custom-2">
+                      <li>
+                        <a class="flex p-2 hover:font-semibold" href="error404.html">
+                          Error 404
+                        </a>
+                      </li>
+                      <li>
+                        <a class="flex p-2 hover:font-semibold" href="message-sent.html">
+                          Message sent
+                        </a>
+                      </li>
+                      <li>
+                        <a class="flex p-2 hover:font-semibold" href="verification.html">
+                          Verification
+                        </a>
+                      </li>
+                      <li>
+                        <a class="flex p-2 hover:font-semibold" href="privacy-policy.html">
+                          Privacy policy
+                        </a>
+                      </li>
+                      <li>
+                        <a class="flex p-2 hover:font-semibold" href="terms-and-conditions.html">
+                          Terms and conditions
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li
+            class="relative cursor-pointer after:absolute after:-bottom-[5px] after:left-0 after:right-0 after:h-1 after:w-full after:origin-center after:scale-x-0 after:rounded-lg after:bg-primary-500 after:transition-transform after:duration-200 after:content-[''] hover:after:scale-x-100">
+            <a href="#">Desktops</a>
+          </li>
+          <li
+            class="relative cursor-pointer after:absolute after:-bottom-[5px] after:left-0 after:right-0 after:h-1 after:w-full after:origin-center after:scale-x-0 after:rounded-lg after:bg-primary-500 after:transition-transform after:duration-200 after:content-[''] hover:after:scale-x-100">
+            <a href="#">Notebooks</a>
+          </li>
+          <li
+            class="relative cursor-pointer after:absolute after:-bottom-[5px] after:left-0 after:right-0 after:h-1 after:w-full after:origin-center after:scale-x-0 after:rounded-lg after:bg-primary-500 after:transition-transform after:duration-200 after:content-[''] hover:after:scale-x-100">
+            <a href="#">Smartphones</a>
+          </li>
+          <li
+            class="relative cursor-pointer after:absolute after:-bottom-[5px] after:left-0 after:right-0 after:h-1 after:w-full after:origin-center after:scale-x-0 after:rounded-lg after:bg-primary-500 after:transition-transform after:duration-200 after:content-[''] hover:after:scale-x-100">
+            <a href="faqs.html">FAQ's</a>
+          </li>
+          <li
+            class="relative cursor-pointer after:absolute after:-bottom-[5px] after:left-0 after:right-0 after:h-1 after:w-full after:origin-center after:scale-x-0 after:rounded-lg after:bg-primary-500 after:transition-transform after:duration-200 after:content-[''] hover:after:scale-x-100">
+            <a href="contact-us.html">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="breadcrumb-section container mx-auto my-5 px-2 sm:px-8">
+    <ul class="flex flex-wrap items-center gap-1">
+      <li class="transition-all duration-300 hover:text-primary-500">
+        <a href="index.html">Home</a>
+      </li>
+      <li>
+        <i class="bi bi-caret-right-fill flex text-primary-500"></i>
+      </li>
+      <li class="pointer-events-none text-slate-500 transition-all duration-300">
+        <a href="wishlist.html">Shop</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="shop-section container mx-auto my-5 px-2 sm:px-8">
+    <div class="grid grid-cols-12 gap-5">
+      <div class="col-span-12">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <span class="text-lg">
+            Results of '
+            <span class="text-primary-500">notebook</span>
+            '
+          </span>
+          <form>
+            <select
+              class="nice-select order-by rounded-lg border-2 border-gray-200 bg-white outline-none transition-all duration-300 focus:border-2 focus:border-primary-500 focus:ring-0">
+              <option value="0">Lower price</option>
+              <option value="1">Higher price</option>
+              <option value="1">Most popular</option>
+            </select>
+          </form>
+        </div>
+      </div>
+      <div class="col-span-12 md:col-span-4 lg:col-span-4 xl:col-span-3">
+        <form class="flex flex-col rounded-lg bg-white p-5" action="#">
+          <div class="mb-5 flex items-center gap-2">
+            <i class="bi bi-funnel flex text-sm text-primary-500"></i>
+            <h1 class="text-xl font-bold uppercase">Search Filter</h1>
+          </div>
+          <div class="mb-5 border-t-2 pt-5">
+            <div class="relative flex items-center">
+              <i class="bi bi-search absolute ml-4 flex text-gray-400"></i>
+              <input
+                class="w-full rounded-lg border-2 border-gray-200 bg-white pl-10 outline-none transition-all duration-300 focus:border-2 focus:border-primary-500 focus:ring-0"
+                type="search" placeholder="Search..." />
+            </div>
+          </div>
+          <div class="mb-5 border-t-2 pt-5">
+            <span class="mb-2 flex font-semibold">Service and Promotion</span>
+            <label
+              class="my-1 flex cursor-pointer select-none items-center gap-2 transition-all duration-300 hover:text-primary-500">
+              <input
+                class="h-4 w-4 rounded border text-primary-500 focus:border-transparent focus:ring focus:ring-primary-400 focus:ring-offset-0"
+                type="checkbox" />
+              <span>With discount</span>
+            </label>
+            <label
+              class="my-1 flex cursor-pointer select-none items-center gap-2 transition-all duration-300 hover:text-primary-500">
+              <input
+                class="h-4 w-4 rounded border text-primary-500 focus:border-transparent focus:ring focus:ring-primary-400 focus:ring-offset-0"
+                type="checkbox" />
+              <span>Free Shipping</span>
+            </label>
+            <label
+              class="my-1 flex cursor-pointer select-none items-center gap-2 transition-all duration-300 hover:text-primary-500">
+              <input
+                class="h-4 w-4 rounded border text-primary-500 focus:border-transparent focus:ring focus:ring-primary-400 focus:ring-offset-0"
+                type="checkbox" />
+              <span>Available stock</span>
+            </label>
+          </div>
+          <div class="mb-5 border-t-2 pt-5">
+            <div class="see-more relative pb-5">
+              <div class="see-more-container gradient-bottom max-h-[220px] overflow-hidden">
+                <div class="see-more-content">
+                  <span class="mb-2 flex font-semibold">Categories</span>
+                  <label
+                    class="flex cursor-pointer select-none items-center gap-2 p-1 transition-all duration-300 hover:text-primary-500">
+                    <input
+                      class="h-4 w-4 rounded border text-primary-500 focus:border-transparent focus:ring focus:ring-primary-400 focus:ring-offset-0"
+                      type="checkbox" />
+                    <span>Pc components</span>
+                  </label>
+                  <label
+                    class="flex cursor-pointer select-none items-center gap-2 p-1 transition-all duration-300 hover:text-primary-500">
+                    <input
+                      class="h-4 w-4 rounded border text-primary-500 focus:border-transparent focus:ring focus:ring-primary-400 focus:ring-offset-0"
+                      type="checkbox" />
+                    <span>Peripherals</span>
+                  </label>
+                  <label
+                    class="flex cursor-pointer select-none items-center gap-2 p-1 transition-all duration-300 hover:text-primary-500">
+                    <input
+                      class="h-4 w-4 rounded border text-primary-500 focus:border-transparent focus:ring focus:ring-primary-400 focus:ring-offset-0"
+                      type="checkbox" />
+                    <span>Computers</span>
+                  </label>
+                  <label
+                    class="flex cursor-pointer select-none items-center gap-2 p-1 transition-all duration-300 hover:text-primary-500">
+                    <input
+                      class="h-4 w-4 rounded border text-primary-500 focus:border-transparent focus:ring focus:ring-primary-400 focus:ring-offset-0"
+                      type="checkbox" />
+                    <span>Monitors</span>
+                  </label>
+                  <label
+                    class="flex cursor-pointer select-none items-center gap-2 p-1 transition-all duration-300 hover:text-primary-500">
+                    <input
+                      class="h-4 w-4 rounded border text-primary-500 focus:border-transparent focus:ring focus:ring-primary-400 focus:ring-offset-0"
+                      type="checkbox" />
+                    <span>Printers</span>
+                  </label>
+                  <label
+                    class="flex cursor-pointer select-none items-center gap-2 p-1 transition-all duration-300 hover:text-primary-500">
+                    <input
+                      class="h-4 w-4 rounded border text-primary-500 focus:border-transparent focus:ring focus:ring-primary-400 focus:ring-offset-0"
+                      type="checkbox" />
+                    <span>Gaming</span>
+                  </label>
+                  <label
+                    class="flex cursor-pointer select-none items-center gap-2 p-1 transition-all duration-300 hover:text-primary-500">
+                    <input
+                      class="h-4 w-4 rounded border text-primary-500 focus:border-transparent focus:ring focus:ring-primary-400 focus:ring-offset-0"
+                      type="checkbox" />
+                    <span>Tablets</span>
+                  </label>
+                  <label
+                    class="flex cursor-pointer select-none items-center gap-2 p-1 transition-all duration-300 hover:text-primary-500">
+                    <input
+                      class="h-4 w-4 rounded border text-primary-500 focus:border-transparent focus:ring focus:ring-primary-400 focus:ring-offset-0"
+                      type="checkbox" />
+                    <span>Smartphones</span>
+                  </label>
+                  <label
+                    class="flex cursor-pointer select-none items-center gap-2 p-1 transition-all duration-300 hover:text-primary-500">
+                    <input
+                      class="h-4 w-4 rounded border text-primary-500 focus:border-transparent focus:ring focus:ring-primary-400 focus:ring-offset-0"
+                      type="checkbox" />
+                    <span>Software</span>
+                  </label>
+                </div>
+              </div>
+              <button class="btn-see-more absolute bottom-0 z-10 flex w-full justify-center hover:text-primary-500"
+                type="button">
+                <i class="bi bi-chevron-compact-down flex text-xl transition-all duration-300"></i>
+              </button>
+            </div>
+          </div>
+          <div class="mb-5 border-t-2 pt-5">
+            <span class="mb-2 flex font-semibold">Brands</span>
+            <div class="max-h-[220px] overflow-y-auto">
+              <label
+                class="flex cursor-pointer select-none items-center gap-2 p-1 transition-all duration-300 hover:text-primary-500">
+                <input
+                  class="h-4 w-4 rounded border text-primary-500 focus:border-transparent focus:ring focus:ring-primary-400 focus:ring-offset-0"
+                  type="checkbox" />
+                <span>Amd</span>
+              </label>
+              <label
+                class="flex cursor-pointer select-none items-center gap-2 p-1 transition-all duration-300 hover:text-primary-500">
+                <input
+                  class="h-4 w-4 rounded border text-primary-500 focus:border-transparent focus:ring focus:ring-primary-400 focus:ring-offset-0"
+                  type="checkbox" />
+                <span>Asrock</span>
+              </label>
+              <label
+                class="flex cursor-pointer select-none items-center gap-2 p-1 transition-all duration-300 hover:text-primary-500">
+                <input
+                  class="h-4 w-4 rounded border text-primary-500 focus:border-transparent focus:ring focus:ring-primary-400 focus:ring-offset-0"
+                  type="checkbox" />
+                <span>Asus</span>
+              </label>
+              <label
+                class="flex cursor-pointer select-none items-center gap-2 p-1 transition-all duration-300 hover:text-primary-500">
+                <input
+                  class="h-4 w-4 rounded border text-primary-500 focus:border-transparent focus:ring focus:ring-primary-400 focus:ring-offset-0"
+                  type="checkbox" />
+                <span>Gigabyte</span>
+              </label>
+              <label
+                class="flex cursor-pointer select-none items-center gap-2 p-1 transition-all duration-300 hover:text-primary-500">
+                <input
+                  class="h-4 w-4 rounded border text-primary-500 focus:border-transparent focus:ring focus:ring-primary-400 focus:ring-offset-0"
+                  type="checkbox" />
+                <span>HP</span>
+              </label>
+              <label
+                class="flex cursor-pointer select-none items-center gap-2 p-1 transition-all duration-300 hover:text-primary-500">
+                <input
+                  class="h-4 w-4 rounded border text-primary-500 focus:border-transparent focus:ring focus:ring-primary-400 focus:ring-offset-0"
+                  type="checkbox" />
+                <span>Intel</span>
+              </label>
+              <label
+                class="flex cursor-pointer select-none items-center gap-2 p-1 transition-all duration-300 hover:text-primary-500">
+                <input
+                  class="h-4 w-4 rounded border text-primary-500 focus:border-transparent focus:ring focus:ring-primary-400 focus:ring-offset-0"
+                  type="checkbox" />
+                <span>Lenovo</span>
+              </label>
+              <label
+                class="flex cursor-pointer select-none items-center gap-2 p-1 transition-all duration-300 hover:text-primary-500">
+                <input
+                  class="h-4 w-4 rounded border text-primary-500 focus:border-transparent focus:ring focus:ring-primary-400 focus:ring-offset-0"
+                  type="checkbox" />
+                <span>Msi</span>
+              </label>
+              <label
+                class="flex cursor-pointer select-none items-center gap-2 p-1 transition-all duration-300 hover:text-primary-500">
+                <input
+                  class="h-4 w-4 rounded border text-primary-500 focus:border-transparent focus:ring focus:ring-primary-400 focus:ring-offset-0"
+                  type="checkbox" />
+                <span>Samsung</span>
+              </label>
+            </div>
+          </div>
+          <div class="mb-5 border-t-2 pt-5">
+            <span class="mb-2 flex font-semibold">Colors</span>
+            <div class="product-colors block">
+              <div class="mt-2 flex gap-2">
+                <div>
+                  <label class="inline-flex items-center">
+                    <input type="radio"
+                      class="cursor-pointer border-transparent bg-blue-600 text-blue-600 checked:bg-none checked:ring checked:ring-blue-300 focus:ring focus:ring-blue-300 focus:ring-offset-0"
+                      name="radio-colors" value="0" checked />
+                  </label>
+                </div>
+                <div>
+                  <label class="inline-flex items-center">
+                    <input type="radio"
+                      class="cursor-pointer border-transparent bg-red-600 text-red-600 checked:bg-none checked:ring checked:ring-red-300 focus:ring focus:ring-red-300 focus:ring-offset-0"
+                      name="radio-colors" value="1" />
+                  </label>
+                </div>
+                <div>
+                  <label class="inline-flex items-center">
+                    <input type="radio"
+                      class="cursor-pointer border-transparent bg-yellow-600 text-yellow-600 checked:bg-none checked:ring checked:ring-yellow-300 focus:ring focus:ring-yellow-300 focus:ring-offset-0"
+                      name="radio-colors" value="2" />
+                  </label>
+                </div>
+                <div>
+                  <label class="inline-flex items-center">
+                    <input type="radio"
+                      class="cursor-pointer border-transparent bg-black text-black checked:bg-none checked:ring checked:ring-gray-400 focus:ring focus:ring-gray-400 focus:ring-offset-0"
+                      name="radio-colors" value="3" />
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t-2 pt-5">
+            <span class="mb-2 flex font-semibold">Price range</span>
+            <div class="flex items-center gap-2">
+              <input
+                class="input-number w-full rounded-lg border-2 border-gray-200 bg-white outline-none transition-all duration-300 focus:border-2 focus:border-primary-500 focus:ring-0"
+                type="number" placeholder="$ MIN" />
+              <div class="h-[2px] w-10 bg-gray-200"></div>
+              <input
+                class="input-number w-full rounded-lg border-2 border-gray-200 bg-white outline-none transition-all duration-300 focus:border-2 focus:border-primary-500 focus:ring-0"
+                type="number" placeholder="$ MAX" />
+            </div>
+            <button
+              class="relative z-[4] mt-2 w-full overflow-hidden rounded-lg bg-primary-500 p-2 font-bold uppercase text-white after:absolute after:left-2/4 after:top-2/4 after:h-0 after:w-0 after:rounded-lg after:bg-primary-400 after:transition-all after:duration-300 after:content-[''] hover:after:left-0 hover:after:top-0 hover:after:z-[3] hover:after:h-full hover:after:w-full"
+              type="submit">
+              <span class="relative z-[4]">Filter</span>
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="col-span-12 md:col-span-8 lg:col-span-8 xl:col-span-9">
+        <div class="grid grid-cols-12 gap-5">
+          <div class="col-span-12 h-auto sm:col-span-6 lg:col-span-4">
+            <div
+              class="card-container relative flex h-full flex-col overflow-hidden rounded-lg bg-white p-5 shadow-md transition-all duration-300 hover:z-[2] hover:-translate-y-2 hover:shadow-xl">
+              <div class="absolute right-[10px] top-[10px]">
+                <div class="p-[2px]">
+                  <a class="tippy tippy-left-wishlist wishlist-button flex h-9 w-9 cursor-pointer items-center justify-center gap-2 rounded-lg bg-black/30 transition-all duration-300 hover:bg-primary-400"
+                    href="javascript:void(0)">
+                    <i class="bi bi-heart pointer-events-none flex text-white"></i>
+                  </a>
+                </div>
+                <div class="p-[2px]">
+                  <a class="tippy tippy-left-card-view flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg bg-black/30 transition-all duration-300 hover:bg-primary-400"
+                    href="javascript:void(0)" data-target=" .modal-quick">
+                    <i class="bi bi-eye pointer-events-none flex text-xl text-white"></i>
+                  </a>
+                </div>
+              </div>
+              <div
+                class="absolute left-0 top-0 flex h-[35px] w-[90px] items-center justify-center rounded-br-lg bg-primary-500">
+                <span class="text-md text-center font-semibold uppercase text-white">
+                  25% Off
+                </span>
+              </div>
+              <div class="h-[190px] overflow-hidden rounded-lg">
+                <a href="#">
+                  <img class="h-full w-full object-contain" src="img/cards/notebooks/note_1.jpg" alt="product" />
+                </a>
+              </div>
+              <div class="my-2 flex justify-between">
+                <div class="my-2" data-rater="5"></div>
+                <div>
+                  <span class="relative z-[4] rounded-md bg-green-300 px-2 py-1 text-xs font-bold uppercase text-white">
+                    instock
+                  </span>
+                </div>
+              </div>
+              <div class="my-1">
+                <a class="line-clamp-1break-all font-medium" href="#">
+                  Apple Macbook Aire 13
+                </a>
+              </div>
+              <div class="my-1">
+                <p class="line-clamp-2 text-sm text-gray-400">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Itaque culpa, odio, qui praesentium dignissimos eaque
+                  dolorum porro alias neque, eius animi ipsa voluptates. Optio
+                  repellat tempora voluptas, dolores ipsam ad!
+                </p>
+              </div>
+              <div class="my-2 flex gap-2">
+                <span class="font-bold">Size:</span>
+                <ul class="flex gap-3">
+                  <li>S</li>
+                  <li>M</li>
+                  <li>L</li>
+                  <li>XL</li>
+                </ul>
+              </div>
+              <div class="my-2 flex gap-2">
+                <div class="block h-3 w-3 rounded-full bg-blue-600"></div>
+                <div class="block h-3 w-3 rounded-full bg-red-600"></div>
+                <div class="block h-3 w-3 rounded-full bg-yellow-600"></div>
+                <div class="block h-3 w-3 rounded-full bg-black"></div>
+              </div>
+              <div class="my-1">
+                <span class="text-lg font-bold">$37.00</span>
+                <span class="text-sm text-primary-500 line-through">
+                  $50.00
+                </span>
+              </div>
+              <div class="mt-auto">
+                <a class="relative flex w-full items-center justify-center overflow-hidden rounded-lg bg-primary-500 p-2 transition-all duration-300 after:absolute after:left-2/4 after:top-2/4 after:h-0 after:w-0 after:rounded-lg after:bg-primary-400 after:transition-all after:duration-300 after:content-[''] hover:after:left-0 hover:after:top-0 hover:after:z-[3] hover:after:h-full hover:after:w-full"
+                  href="#">
+                  <span class="relative z-[4] font-bold uppercase text-white">
+                    View details
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 h-auto sm:col-span-6 lg:col-span-4">
+            <div
+              class="card-container relative flex h-full flex-col overflow-hidden rounded-lg bg-white p-5 shadow-md transition-all duration-300 hover:z-[2] hover:-translate-y-2 hover:shadow-xl">
+              <div class="absolute right-[10px] top-[10px]">
+                <div class="p-[2px]">
+                  <a class="tippy tippy-left-wishlist wishlist-button flex h-9 w-9 cursor-pointer items-center justify-center gap-2 rounded-lg bg-black/30 transition-all duration-300 hover:bg-primary-400"
+                    href="javascript:void(0)">
+                    <i class="bi bi-heart pointer-events-none flex text-white"></i>
+                  </a>
+                </div>
+                <div class="p-[2px]">
+                  <a class="tippy tippy-left-card-view flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg bg-black/30 transition-all duration-300 hover:bg-primary-400"
+                    href="javascript:void(0)" data-target=" .modal-quick">
+                    <i class="bi bi-eye pointer-events-none flex text-xl text-white"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="h-[190px] overflow-hidden rounded-lg">
+                <a href="#">
+                  <img class="h-full w-full object-contain" src="img/cards/notebooks/note_2.jpg" alt="product" />
+                </a>
+              </div>
+              <div class="my-2 flex justify-between">
+                <div class="my-2" data-rater="5"></div>
+                <div>
+                  <span class="relative z-[4] rounded-md bg-green-300 px-2 py-1 text-xs font-bold uppercase text-white">
+                    instock
+                  </span>
+                </div>
+              </div>
+              <div class="my-1">
+                <a class="line-clamp-1break-all font-medium" href="#">
+                  Asus ZenBook 14
+                </a>
+              </div>
+              <div class="my-1">
+                <p class="line-clamp-2 text-sm text-gray-400">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Itaque culpa, odio, qui praesentium dignissimos eaque
+                  dolorum porro alias neque, eius animi ipsa voluptates. Optio
+                  repellat tempora voluptas, dolores ipsam ad!
+                </p>
+              </div>
+              <div class="my-2 flex gap-2">
+                <span class="font-bold">Size:</span>
+                <ul class="flex gap-3">
+                  <li>S</li>
+                  <li>M</li>
+                  <li>L</li>
+                  <li>XL</li>
+                </ul>
+              </div>
+              <div class="my-2 flex gap-2">
+                <div class="block h-3 w-3 rounded-full bg-blue-600"></div>
+                <div class="block h-3 w-3 rounded-full bg-red-600"></div>
+                <div class="block h-3 w-3 rounded-full bg-yellow-600"></div>
+                <div class="block h-3 w-3 rounded-full bg-black"></div>
+              </div>
+              <div class="my-1">
+                <span class="text-lg font-bold">$37.00</span>
+              </div>
+              <div class="mt-auto">
+                <a class="relative flex w-full items-center justify-center overflow-hidden rounded-lg bg-primary-500 p-2 transition-all duration-300 after:absolute after:left-2/4 after:top-2/4 after:h-0 after:w-0 after:rounded-lg after:bg-primary-400 after:transition-all after:duration-300 after:content-[''] hover:after:left-0 hover:after:top-0 hover:after:z-[3] hover:after:h-full hover:after:w-full"
+                  href="#">
+                  <span class="relative z-[4] font-bold uppercase text-white">
+                    View details
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 h-auto sm:col-span-6 lg:col-span-4">
+            <div
+              class="card-container relative flex h-full flex-col overflow-hidden rounded-lg bg-white p-5 shadow-md transition-all duration-300 hover:z-[2] hover:-translate-y-2 hover:shadow-xl">
+              <div class="absolute right-[10px] top-[10px]">
+                <div class="p-[2px]">
+                  <a class="tippy tippy-left-wishlist wishlist-button flex h-9 w-9 cursor-pointer items-center justify-center gap-2 rounded-lg bg-black/30 transition-all duration-300 hover:bg-primary-400"
+                    href="javascript:void(0)">
+                    <i class="bi bi-heart pointer-events-none flex text-white"></i>
+                  </a>
+                </div>
+                <div class="p-[2px]">
+                  <a class="tippy tippy-left-card-view flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg bg-black/30 transition-all duration-300 hover:bg-primary-400"
+                    href="javascript:void(0)" data-target=" .modal-quick">
+                    <i class="bi bi-eye pointer-events-none flex text-xl text-white"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="h-[190px] overflow-hidden rounded-lg">
+                <a href="#">
+                  <img class="h-full w-full object-contain" src="img/cards/notebooks/note_3.jpg" alt="product" />
+                </a>
+              </div>
+              <div class="my-2 flex justify-between">
+                <div class="my-2" data-rater="5"></div>
+                <div>
+                  <span class="relative z-[4] rounded-md bg-green-300 px-2 py-1 text-xs font-bold uppercase text-white">
+                    instock
+                  </span>
+                </div>
+              </div>
+              <div class="my-1">
+                <a class="line-clamp-1break-all font-medium" href="#">
+                  Lenovo V15
+                </a>
+              </div>
+              <div class="my-1">
+                <p class="line-clamp-2 text-sm text-gray-400">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Itaque culpa, odio, qui praesentium dignissimos eaque
+                  dolorum porro alias neque, eius animi ipsa voluptates. Optio
+                  repellat tempora voluptas, dolores ipsam ad!
+                </p>
+              </div>
+              <div class="my-2 flex gap-2">
+                <span class="font-bold">Size:</span>
+                <ul class="flex gap-3">
+                  <li>S</li>
+                  <li>M</li>
+                  <li>L</li>
+                  <li>XL</li>
+                </ul>
+              </div>
+              <div class="my-2 flex gap-2">
+                <div class="block h-3 w-3 rounded-full bg-blue-600"></div>
+                <div class="block h-3 w-3 rounded-full bg-red-600"></div>
+                <div class="block h-3 w-3 rounded-full bg-yellow-600"></div>
+                <div class="block h-3 w-3 rounded-full bg-black"></div>
+              </div>
+              <div class="my-1">
+                <span class="text-lg font-bold">$37.00</span>
+              </div>
+              <div class="mt-auto">
+                <a class="relative flex w-full items-center justify-center overflow-hidden rounded-lg bg-primary-500 p-2 transition-all duration-300 after:absolute after:left-2/4 after:top-2/4 after:h-0 after:w-0 after:rounded-lg after:bg-primary-400 after:transition-all after:duration-300 after:content-[''] hover:after:left-0 hover:after:top-0 hover:after:z-[3] hover:after:h-full hover:after:w-full"
+                  href="#">
+                  <span class="relative z-[4] font-bold uppercase text-white">
+                    View details
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 h-auto sm:col-span-6 lg:col-span-4">
+            <div
+              class="card-container relative flex h-full flex-col overflow-hidden rounded-lg bg-white p-5 shadow-md transition-all duration-300 hover:z-[2] hover:-translate-y-2 hover:shadow-xl">
+              <div class="absolute right-[10px] top-[10px]">
+                <div class="p-[2px]">
+                  <a class="tippy tippy-left-wishlist wishlist-button flex h-9 w-9 cursor-pointer items-center justify-center gap-2 rounded-lg bg-black/30 transition-all duration-300 hover:bg-primary-400"
+                    href="javascript:void(0)">
+                    <i class="bi bi-heart pointer-events-none flex text-white"></i>
+                  </a>
+                </div>
+                <div class="p-[2px]">
+                  <a class="tippy tippy-left-card-view flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg bg-black/30 transition-all duration-300 hover:bg-primary-400"
+                    href="javascript:void(0)" data-target=" .modal-quick">
+                    <i class="bi bi-eye pointer-events-none flex text-xl text-white"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="h-[190px] overflow-hidden rounded-lg">
+                <a href="#">
+                  <img class="h-full w-full object-contain" src="img/cards/notebooks/note_4.jpg" alt="product" />
+                </a>
+              </div>
+              <div class="my-2 flex justify-between">
+                <div class="my-2" data-rater="5"></div>
+                <div>
+                  <span class="relative z-[4] rounded-md bg-green-300 px-2 py-1 text-xs font-bold uppercase text-white">
+                    instock
+                  </span>
+                </div>
+              </div>
+              <div class="my-1">
+                <a class="line-clamp-1break-all font-medium" href="#">
+                  HP 255 G7
+                </a>
+              </div>
+              <div class="my-1">
+                <p class="line-clamp-2 text-sm text-gray-400">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Itaque culpa, odio, qui praesentium dignissimos eaque
+                  dolorum porro alias neque, eius animi ipsa voluptates. Optio
+                  repellat tempora voluptas, dolores ipsam ad!
+                </p>
+              </div>
+              <div class="my-2 flex gap-2">
+                <span class="font-bold">Size:</span>
+                <ul class="flex gap-3">
+                  <li>S</li>
+                  <li>M</li>
+                  <li>L</li>
+                  <li>XL</li>
+                </ul>
+              </div>
+              <div class="my-2 flex gap-2">
+                <div class="block h-3 w-3 rounded-full bg-blue-600"></div>
+                <div class="block h-3 w-3 rounded-full bg-red-600"></div>
+                <div class="block h-3 w-3 rounded-full bg-yellow-600"></div>
+                <div class="block h-3 w-3 rounded-full bg-black"></div>
+              </div>
+              <div class="my-1">
+                <span class="text-lg font-bold">$37.00</span>
+              </div>
+              <div class="mt-auto">
+                <a class="relative flex w-full items-center justify-center overflow-hidden rounded-lg bg-primary-500 p-2 transition-all duration-300 after:absolute after:left-2/4 after:top-2/4 after:h-0 after:w-0 after:rounded-lg after:bg-primary-400 after:transition-all after:duration-300 after:content-[''] hover:after:left-0 hover:after:top-0 hover:after:z-[3] hover:after:h-full hover:after:w-full"
+                  href="#">
+                  <span class="relative z-[4] font-bold uppercase text-white">
+                    View details
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-span-12">
+        <div class="flex items-center justify-center">
+          <ul class="pagination flex items-center">
+            <li class="pointer-events-none px-3 py-2 text-gray-200">
+              <i class="bi bi-arrow-left-short flex"></i>
+            </li>
+            <li class="active cursor-pointer px-3 py-2">1</li>
+            <li class="cursor-pointer px-3 py-2">2</li>
+            <li class="cursor-pointer px-3 py-2">3</li>
+            <li type="radio" class="hidden cursor-pointer px-3 py-2 tracking-wide sm:block">
+              ...
+            </li>
+            <li class="hidden cursor-pointer px-3 py-2 sm:block">10</li>
+            <li class="hidden cursor-pointer px-3 py-2 sm:block">11</li>
+            <li class="cursor-pointer px-3 py-2 text-primary-500">
+              <i class="bi bi-arrow-right-short flex"></i>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modals -->
+  <div class="modal-menu modal-container resize-close modal-overlay z-20">
+    <div class="modal-content modal-left flex h-full w-[288px] min-w-[250px] flex-col bg-[#f5f7fe]">
+      <div class="w-full bg-primary-700">
+        <button class="close-modal absolute right-5 top-5 p-[3px] text-white transition-all duration-300">
+          <i class="bi bi-x-lg pointer-events-none flex text-xl"></i>
+        </button>
+        <div class="py-12">
+          <img src="img/logo.png" class="mx-auto h-[40px]" alt="logo" />
+        </div>
+      </div>
+      <nav class="h-full w-full overflow-auto bg-white">
+        <ul class="metismenu">
+          <li class="border-b border-gray-200">
+            <a class="flex select-none items-center p-2" href="index.html">
+              <i class="bi bi-house-door mr-3 flex text-xl text-primary-500"></i>
+              <span class="font-semibold">Home</span>
+            </a>
+          </li>
+          <li class="border-b border-gray-200">
+            <div class="sub-metismenu has-arrow flex cursor-pointer select-none items-center p-2" aria-expanded="false"
+              role="menu">
+              <i class="bi bi-person mr-3 flex text-xl text-primary-500"></i>
+              <span class="font-semibold">My Account</span>
+            </div>
+            <div class="metismenu-content">
+              <a class="ml-10 block p-1" href="#" data-tab="0" data-target=".modal-entry">
+                Login
+              </a>
+              <a class="ml-10 block p-1" href="#" data-tab="1" data-target=".modal-entry">
+                Sign Up
+              </a>
+            </div>
+          </li>
+          <li class="border-b border-gray-200">
+            <div class="cursor-pointer p-2" data-target=".modal-wishlist">
+              <div class="pointer-events-none flex cursor-pointer select-none items-center">
+                <i class="bi bi-heart mr-3 flex text-xl text-primary-500"></i>
+                <span class="font-semibold">Wishlist</span>
+                <span
+                  class="ml-auto flex h-[22px] min-w-[22px] items-center justify-center rounded-xl bg-primary-500 px-[6px] text-xs text-white">
+                  0
+                </span>
+              </div>
+            </div>
+          </li>
+          <li class="border-b border-gray-200">
+            <div class="cursor-pointer p-2" data-target=".modal-cart">
+              <div class="pointer-events-none flex cursor-pointer select-none items-center">
+                <i class="bi bi-cart mr-3 flex text-xl text-primary-500"></i>
+                <span class="font-semibold">Shopping Cart</span>
+                <span
+                  class="ml-auto flex h-[22px] min-w-[22px] items-center justify-center rounded-xl bg-primary-500 px-[6px] text-xs text-white">
+                  0
+                </span>
+              </div>
+            </div>
+          </li>
+          <li class="border-b border-gray-200">
+            <div class="sub-metismenu has-arrow flex cursor-pointer select-none items-center p-2" aria-expanded="false"
+              role="menu">
+              <i class="bi bi-motherboard mr-3 flex text-xl text-primary-500"></i>
+              <span class="font-semibold">Hardware</span>
+            </div>
+            <div class="metismenu-content">
+              <a class="ml-10 block p-1" href="#">Motherboards</a>
+              <a class="ml-10 block p-1" href="#">Processors</a>
+              <a class="ml-10 block p-1" href="#">Rams</a>
+              <a class="ml-10 block p-1" href="#">Video Cards</a>
+              <a class="ml-10 block p-1" href="#">Power Supplys</a>
+              <a class="ml-10 block p-1" href="#">Hard Drives</a>
+              <a class="ml-10 block p-1" href="#">SSD Disk</a>
+            </div>
+          </li>
+          <li class="border-b border-gray-200">
+            <div class="sub-metismenu has-arrow flex cursor-pointer select-none items-center p-2" aria-expanded="false"
+              role="menu">
+              <i class="bi bi-mouse mr-3 flex text-xl text-primary-500"></i>
+              <span class="font-semibold">Peripherals</span>
+            </div>
+            <div class="metismenu-content">
+              <a class="ml-10 block p-1" href="#">Keywords</a>
+              <a class="ml-10 block p-1" href="#">Mouses</a>
+              <a class="ml-10 block p-1" href="#">Mics</a>
+              <a class="ml-10 block p-1" href="#">Webcam</a>
+            </div>
+          </li>
+          <li class="border-b border-gray-200">
+            <div class="sub-metismenu has-arrow flex cursor-pointer select-none items-center p-2" aria-expanded="false"
+              role="menu">
+              <i class="bi bi-pc-display mr-3 flex text-xl text-primary-500"></i>
+              <span class="font-semibold">Computers</span>
+            </div>
+            <div class="metismenu-content">
+              <a class="ml-10 block p-1" href="#">Notebooks</a>
+              <a class="ml-10 block p-1" href="#">Desktops</a>
+            </div>
+          </li>
+          <li class="border-b border-gray-200">
+            <a class="flex cursor-pointer select-none items-center p-2" href="#">
+              <i class="bi bi-tv mr-3 flex text-xl text-primary-500"></i>
+              <span class="font-semibold">Monitors</span>
+            </a>
+          </li>
+          <li class="border-b border-gray-200">
+            <a class="flex cursor-pointer select-none items-center p-2" href="#">
+              <i class="bi bi-printer mr-3 flex text-xl text-primary-500"></i>
+              <span class="font-semibold">Printers</span>
+            </a>
+          </li>
+          <li class="border-b border-gray-200">
+            <a class="flex cursor-pointer select-none items-center p-2" href="#">
+              <i class="bi bi-phone mr-3 flex text-xl text-primary-500"></i>
+              <span class="font-semibold">Smartphones</span>
+            </a>
+          </li>
+          <li class="border-b border-gray-200">
+            <a class="flex select-none items-center p-2" href="faqs.html">
+              <i class="bi bi-question-circle mr-3 flex text-xl text-primary-500"></i>
+              <span class="font-semibold">FAQ's</span>
+            </a>
+          </li>
+          <li class="border-b border-gray-200">
+            <a class="flex select-none items-center p-2" href="contact-us.html">
+              <i class="bi bi-telephone mr-3 flex text-xl text-primary-500"></i>
+              <span class="font-semibold">Contact Us</span>
+            </a>
+          </li>
+          <li class="border-b border-gray-200">
+            <div class="sub-metismenu has-arrow flex cursor-pointer select-none items-center p-2" aria-expanded="false"
+              role="menu">
+              <span class="font-semibold">Pages</span>
+            </div>
+            <div class="metismenu-content">
+              <a class="ml-10 block p-1" href="wishlist.html">Wishlist</a>
+              <a class="ml-10 block p-1" href="shopping-cart.html">
+                Shopping Cart
+              </a>
+              <a class="ml-10 block p-1" href="product-details.html">
+                Product Details
+              </a>
+              <a class="ml-10 block p-1" href="checkout.html">Checkout</a>
+              <a class="ml-10 block p-1" href="shop-mixed.html">
+                Shop - Mixed
+              </a>
+              <a class="ml-10 block p-1" href="shop-listed.html">
+                Shop - Listed
+              </a>
+              <a class="ml-10 block p-1" href="shop-grid.html">Shop - Grid</a>
+              <a class="ml-10 block p-1" href="about-us.html">About Us</a>
+              <a class="ml-10 block p-1" href="my-account.html">My Account</a>
+              <a class="ml-10 block p-1" href="forgot-password.html">
+                Forgot Password
+              </a>
+              <a class="ml-10 block p-1" href="login.html">Login</a>
+              <a class="ml-10 block p-1" href="sign-up.html">Sign Up</a>
+              <a class="ml-10 block p-1" href="verification.html">
+                Verification
+              </a>
+              <a class="ml-10 block p-1" href="terms-and-conditions.html">
+                Terms & Conditions
+              </a>
+              <a class="ml-10 block p-1" href="privacy-policy.html">
+                Privacy Policy
+              </a>
+              <a class="ml-10 block p-1" href="error404.html">Error 404</a>
+              <a class="ml-10 block p-1" href="message-sent.html">
+                Message Sent
+              </a>
+              <a class="ml-10 block p-1" href="purchase-completed.html">
+                Purchase Completed
+              </a>
+              <a class="ml-10 block p-1" href="purchase-failed.html">
+                Purchase Failed
+              </a>
+              <a class="ml-10 block p-1" href="maintenance.html">
+                Maintenance
+              </a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div class="modal-cart modal-container modal-overlay z-20">
+    <div class="modal-content modal-right flex h-full w-[400px] min-w-[250px] flex-col bg-[#f5f7fe]">
+      <div class="w-full">
+        <div class="border-b-2 border-gray-200 p-5">
+          <h3 class="text-xl font-bold uppercase">Shopping Cart</h3>
+        </div>
+        <button class="close-modal absolute right-5 top-5 p-[3px] transition-all duration-300 hover:text-slate-400">
+          <i class="bi bi-x-lg pointer-events-none flex text-xl"></i>
+        </button>
+      </div>
+      <div class="h-full overflow-auto">
+        <!-- If the shopping cart is empty (replace hidden with flex) -->
+        <div class="hidden flex-col items-center justify-center gap-4 p-5">
+          <i class="bi bi-cart-x text-8xl text-gray-200"></i>
+          <p class="font-semibold">There are no products in the cart.</p>
+          <a class="relative flex items-center justify-center gap-2 overflow-hidden rounded-lg bg-primary-500 p-2 transition-all duration-300 after:absolute after:left-2/4 after:top-2/4 after:h-0 after:w-0 after:rounded-lg after:bg-primary-400 after:transition-all after:duration-300 after:content-[''] hover:after:left-0 hover:after:top-0 hover:after:z-[3] hover:after:h-full hover:after:w-full"
+            href="#">
+            <span class="relative z-[4] font-bold uppercase text-white">
+              Go to the store
+            </span>
+          </a>
+        </div>
+        <!-- -->
+        <a class="flex h-[100px] w-full items-center justify-between gap-5 bg-white p-2 transition-all duration-300 hover:bg-gray-100"
+          href="#">
+          <div class="h-[80px] w-[80px] min-w-[80px] overflow-hidden rounded-lg border">
+            <img class="h-full w-full object-cover" src="img/product/prod-1.jpg" alt="product" />
+          </div>
+          <div class="flex w-full flex-col">
+            <h6 class="line-clamp-2 break-all text-lg font-semibold">
+              Ryzen 5 3600x
+            </h6>
+            <div class="flex gap-2">
+              <div class="flex gap-1 leading-7 text-gray-400">
+                <span>1</span>
+                <span>X</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="font-bold text-primary-500">$37.00</span>
+                <small class="text-xs text-primary-500 line-through">
+                  $50.00
+                </small>
+              </div>
+            </div>
+          </div>
+          <div class="flex text-slate-400 transition-all duration-300 hover:text-primary-500">
+            <i class="bi bi-trash-fill pointer-events-none text-2xl"></i>
+          </div>
+        </a>
+      </div>
+      <div class="mt-auto border-t-2 border-gray-200 bg-white px-1 pt-5 xs:px-5">
+        <div class="flex justify-between">
+          <span class="text-lg uppercase">Subtotal:</span>
+          <span class="text-lg font-semibold text-primary-500">$37.00</span>
+        </div>
+        <a class="relative my-5 flex w-full items-center justify-center overflow-hidden rounded-lg bg-primary-500 p-2 transition-all duration-300 after:absolute after:left-2/4 after:top-2/4 after:h-0 after:w-0 after:rounded-lg after:bg-primary-400 after:transition-all after:duration-300 after:content-[''] hover:after:left-0 hover:after:top-0 hover:after:z-[3] hover:after:h-full hover:after:w-full"
+          href="shopping-cart.html">
+          <span class="relative z-[4] font-bold uppercase text-white">
+            View Shopping Cart
+          </span>
+        </a>
+        <a class="relative my-5 flex w-full items-center justify-center overflow-hidden rounded-lg bg-primary-500 p-2 transition-all duration-300 after:absolute after:left-2/4 after:top-2/4 after:h-0 after:w-0 after:rounded-lg after:bg-primary-400 after:transition-all after:duration-300 after:content-[''] hover:after:left-0 hover:after:top-0 hover:after:z-[3] hover:after:h-full hover:after:w-full"
+          href="checkout.html">
+          <span class="relative z-[4] font-bold uppercase text-white">
+            Checkout now
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-wishlist modal-container modal-overlay z-20">
+    <div class="modal-content modal-right flex h-full w-[400px] min-w-[250px] flex-col bg-[#f5f7fe]">
+      <div class="w-full">
+        <div class="border-b-2 border-gray-200 p-5">
+          <h3 class="text-xl font-bold uppercase">Wishlist</h3>
+        </div>
+        <button class="close-modal absolute right-5 top-5 p-[3px] transition-all duration-300 hover:text-slate-400">
+          <i class="bi bi-x-lg pointer-events-none flex text-xl"></i>
+        </button>
+      </div>
+      <div class="h-full overflow-auto">
+        <!-- If the wishlist is empty (replace hidden with flex) -->
+        <div class="hidden flex-col items-center justify-center gap-4 p-5">
+          <i class="bi bi-heart text-8xl text-gray-200"></i>
+          <p class="font-semibold">There are no products in the wishlist.</p>
+          <a class="relative flex items-center justify-center gap-2 overflow-hidden rounded-lg bg-primary-500 p-2 transition-all duration-300 after:absolute after:left-2/4 after:top-2/4 after:h-0 after:w-0 after:rounded-lg after:bg-primary-400 after:transition-all after:duration-300 after:content-[''] hover:after:left-0 hover:after:top-0 hover:after:z-[3] hover:after:h-full hover:after:w-full"
+            href="#">
+            <span class="relative z-[4] font-bold uppercase text-white">
+              Go to the store
+            </span>
+          </a>
+        </div>
+        <a class="flex h-[100px] w-full items-center justify-between gap-5 bg-white p-2 transition-all duration-300 hover:bg-gray-100"
+          href="#">
+          <div class="h-[80px] w-[80px] min-w-[80px] overflow-hidden rounded-lg border">
+            <img class="h-full w-full object-cover" src="img/product/prod-1.jpg" alt="product" />
+          </div>
+
+          <div class="flex w-full flex-col">
+            <h6 class="line-clamp-2 break-all text-lg font-semibold">
+              Ryzen 5 3600x
+            </h6>
+            <div class="flex items-center gap-2">
+              <span class="font-bold text-primary-500">$37.00</span>
+              <small class="text-xs text-primary-500 line-through">
+                $50.00
+              </small>
+            </div>
+          </div>
+
+          <div class="flex text-slate-400 transition-all duration-300 hover:text-primary-500">
+            <i class="bi bi-trash-fill pointer-events-none text-2xl"></i>
+          </div>
+        </a>
+      </div>
+      <div class="mt-auto border-t-2 border-gray-200 bg-white px-1 xs:px-5">
+        <a class="relative my-5 flex w-full items-center justify-center overflow-hidden rounded-lg bg-primary-500 p-2 transition-all duration-300 after:absolute after:left-2/4 after:top-2/4 after:h-0 after:w-0 after:rounded-lg after:bg-primary-400 after:transition-all after:duration-300 after:content-[''] hover:after:left-0 hover:after:top-0 hover:after:z-[3] hover:after:h-full hover:after:w-full"
+          href="wishlist.html">
+          <span class="relative z-[4] font-bold uppercase text-white">
+            View Wishlist
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-entry modal-container modal-overlay">
+    <div class="modal-content modal-center-top flex w-[500px] min-w-[250px] flex-col rounded-lg bg-white p-5">
+      <button
+        class="close-modal absolute right-0 top-0 p-2 transition-all duration-300 sm:right-[-10px] sm:top-[-10px] sm:rounded-lg sm:bg-primary-500 sm:text-white sm:hover:bg-primary-400">
+        <i class="bi bi-x-lg pointer-events-none flex"></i>
+      </button>
+      <div class="tab-container tab-container-entry border">
+        <ul class="flex items-center justify-between">
+          <li
+            class="active tab-item w-full cursor-pointer bg-gray-200 p-2 text-center text-gray-400 transition-all duration-500">
+            Login
+          </li>
+          <li
+            class="tab-item w-full cursor-pointer bg-gray-200 p-2 text-center text-gray-400 transition-all duration-500">
+            Sign Up
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="active tab-content-item w-full p-5">
+            <div class="my-5">
+              <img class="mx-auto" src="img/logo2.png" alt="logo" />
+            </div>
+            <form action="#">
+              <div class="flex flex-col gap-4">
+                <div class="relative flex h-[40px] items-center">
+                  <i class="bi bi-person absolute ml-2 flex text-[24px] text-gray-400"></i>
+                  <input
+                    class="w-full rounded-lg border-2 border-gray-200 bg-white pl-10 outline-none transition-all duration-300 focus:border-2 focus:border-primary-500 focus:ring-0"
+                    type="text" placeholder="Username or Email" required />
+                </div>
+                <div class="relative flex h-[40px] items-center">
+                  <i class="bi bi-lock absolute ml-2 flex text-[24px] text-gray-400"></i>
+                  <input
+                    class="w-full rounded-lg border-2 border-gray-200 bg-white pl-10 outline-none transition-all duration-300 focus:border-2 focus:border-primary-500 focus:ring-0"
+                    type="password" placeholder="Password" required />
+                </div>
+                <button
+                  class="relative h-full w-full overflow-hidden rounded-lg bg-primary-500 p-2 transition-all duration-300 after:absolute after:left-2/4 after:top-2/4 after:h-0 after:w-0 after:rounded-lg after:bg-primary-400 after:transition-all after:duration-300 after:content-[''] hover:after:left-0 hover:after:top-0 hover:after:z-[3] hover:after:h-full hover:after:w-full"
+                  type="submit">
+                  <span class="relative z-[4] font-bold uppercase text-white">
+                    Login
+                  </span>
+                </button>
+              </div>
+              <div class="my-2 flex flex-wrap items-center justify-between gap-2">
+                <label class="flex select-none items-center gap-2">
+                  <input
+                    class="h-4 w-4 rounded border text-primary-500 focus:border-transparent focus:ring focus:ring-primary-400 focus:ring-offset-0"
+                    type="checkbox" />
+                  <span>Remember</span>
+                </label>
+                <a class="relative cursor-pointer text-[#3091ff] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-1 after:w-full after:origin-center after:scale-x-0 after:rounded-lg after:bg-primary-500 after:transition-transform after:duration-200 after:content-[''] hover:after:scale-x-100"
+                  href="#">
+                  Forgot Password?
+                </a>
+              </div>
+            </form>
+            <span
+              class="flex items-center py-2 before:my-auto before:h-px before:w-full before:bg-gray-400 before:content-[''] after:my-auto after:h-px after:w-full after:bg-gray-400 after:content-['']">
+              <span class="mx-2 text-sm uppercase">Or</span>
+            </span>
+            <div class="flex flex-col flex-wrap justify-center gap-5 sm:flex-row">
+              <button
+                class="flex h-[50px] min-w-[100px] items-center justify-center rounded-lg bg-[#1877f2] transition-all duration-300 hover:scale-110">
+                <i class="bi bi-facebook flex text-3xl text-white"></i>
+              </button>
+              <button
+                class="flex h-[50px] min-w-[100px] items-center justify-center rounded-lg bg-black transition-all duration-300 hover:scale-110">
+                <i class="bi bi-twitter-x flex text-3xl text-white"></i>
+              </button>
+              <button
+                class="flex h-[50px] min-w-[100px] items-center justify-center rounded-lg bg-[#ea4335] transition-all duration-300 hover:scale-110">
+                <i class="bi bi-google flex text-3xl text-white"></i>
+              </button>
+            </div>
+          </div>
+          <div class="tab-content-item w-full p-5">
+            <div class="my-5">
+              <img class="mx-auto" src="img/logo2.png" alt="logo" />
+            </div>
+            <form action="#">
+              <div class="flex flex-col gap-4">
+                <div class="relative flex h-[40px] items-center">
+                  <i class="bi bi-person absolute ml-2 flex text-[24px] text-gray-400"></i>
+                  <input
+                    class="w-full rounded-lg border-2 border-gray-200 bg-white pl-10 outline-none transition-all duration-300 focus:border-2 focus:border-primary-500 focus:ring-0"
+                    type="text" placeholder="Name" required />
+                </div>
+                <div class="relative flex h-[40px] items-center">
+                  <i class="bi bi-envelope absolute ml-2 flex text-[24px] text-gray-400"></i>
+                  <input
+                    class="w-full rounded-lg border-2 border-gray-200 bg-white pl-10 outline-none transition-all duration-300 focus:border-2 focus:border-primary-500 focus:ring-0"
+                    type="text" placeholder="Email" required />
+                </div>
+                <div class="relative flex h-[40px] items-center">
+                  <i class="bi bi-lock absolute ml-2 flex text-[24px] text-gray-400"></i>
+                  <input
+                    class="w-full rounded-lg border-2 border-gray-200 bg-white pl-10 outline-none transition-all duration-300 focus:border-2 focus:border-primary-500 focus:ring-0"
+                    type="password" placeholder="Password" required />
+                </div>
+                <div class="relative flex h-[40px] items-center">
+                  <i class="bi bi-lock-fill absolute ml-2 flex text-[24px] text-gray-400"></i>
+                  <input
+                    class="w-full rounded-lg border-2 border-gray-200 bg-white pl-10 outline-none transition-all duration-300 focus:border-2 focus:border-primary-500 focus:ring-0"
+                    type="password" placeholder="Confirm Password" required />
+                </div>
+                <button
+                  class="relative h-full w-full overflow-hidden rounded-lg bg-primary-500 p-2 transition-all duration-300 after:absolute after:left-2/4 after:top-2/4 after:h-0 after:w-0 after:rounded-lg after:bg-primary-400 after:transition-all after:duration-300 after:content-[''] hover:after:left-0 hover:after:top-0 hover:after:z-[3] hover:after:h-full hover:after:w-full"
+                  type="submit">
+                  <span class="relative z-[4] font-bold uppercase text-white">
+                    Sign Up
+                  </span>
+                </button>
+              </div>
+              <div class="my-2 flex items-center justify-between">
+                <label class="flex select-none items-center gap-2">
+                  <input
+                    class="h-4 w-4 rounded border text-primary-500 focus:border-transparent focus:ring focus:ring-primary-400 focus:ring-offset-0"
+                    type="checkbox" />
+                  <span>
+                    I agree with all
+                    <a class="relative cursor-pointer text-[#3091ff] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-1 after:w-full after:origin-center after:scale-x-0 after:rounded-lg after:bg-primary-500 after:transition-transform after:duration-200 after:content-[''] hover:after:scale-x-100"
+                      href="#">
+                      Terms of Use
+                    </a>
+                    &
+                    <a class="relative cursor-pointer text-[#3091ff] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-1 after:w-full after:origin-center after:scale-x-0 after:rounded-lg after:bg-primary-500 after:transition-transform after:duration-200 after:content-[''] hover:after:scale-x-100"
+                      href="#">
+                      Privacy Policy
+                    </a>
+                    .
+                  </span>
+                </label>
+              </div>
+            </form>
+            <span
+              class="flex items-center py-2 before:my-auto before:h-px before:w-full before:bg-gray-400 before:content-[''] after:my-auto after:h-px after:w-full after:bg-gray-400 after:content-['']">
+              <span class="mx-2 text-sm uppercase">Or</span>
+            </span>
+            <div class="flex flex-col flex-wrap justify-center gap-5 sm:flex-row">
+              <button
+                class="flex h-[50px] min-w-[100px] items-center justify-center rounded-lg bg-[#1877f2] transition-all duration-300 hover:scale-110">
+                <i class="bi bi-facebook flex text-3xl text-white"></i>
+              </button>
+              <button
+                class="flex h-[50px] min-w-[100px] items-center justify-center rounded-lg bg-black transition-all duration-300 hover:scale-110">
+                <i class="bi bi-twitter-x flex text-3xl text-white"></i>
+              </button>
+              <button
+                class="flex h-[50px] min-w-[100px] items-center justify-center rounded-lg bg-[#ea4335] transition-all duration-300 hover:scale-110">
+                <i class="bi bi-google flex text-3xl text-white"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-quick modal-container modal-overlay">
+    <div class="modal-content modal-center flex w-[900px] min-w-[250px]">
+      <div class="relative m-4 flex w-full flex-col rounded-lg bg-[#f3f3f3] p-5 lg:m-10">
+        <button
+          class="close-modal absolute right-0 top-0 p-2 transition-all duration-300 sm:right-[-10px] sm:top-[-10px] sm:rounded-lg sm:bg-primary-500 sm:text-white sm:hover:bg-primary-400">
+          <i class="bi bi-x-lg pointer-events-none flex"></i>
+        </button>
+        <div class="grid grid-cols-12 gap-5">
+          <div class="col-span-12 max-h-[500px] md:col-span-7">
+            <div class="swiper swiper-top group relative flex items-center rounded-lg">
+              <div class="swiper-wrapper z-[5]">
+                <div class="swiper-slide">
+                  <div class="swiper-zoom-container">
+                    <img src="img/product/prod-1.jpg" alt="product" />
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="swiper-zoom-container">
+                    <img src="img/product/prod-2.jpg" alt="product" />
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="swiper-zoom-container">
+                    <img src="img/product/prod-3.jpg" alt="product" />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="button-next absolute -right-16 z-20 flex h-10 w-10 select-none items-center justify-center rounded bg-black/30 text-xl text-white shadow transition-all duration-300 group-hover:right-4 hover:bg-primary-500 hover:shadow-md">
+                &#10095;
+              </div>
+              <div
+                class="button-prev absolute -left-16 z-20 flex h-10 w-10 select-none items-center justify-center rounded bg-black/30 text-xl text-white shadow transition-all duration-300 group-hover:left-4 hover:bg-primary-500 hover:shadow-md">
+                &#10094;
+              </div>
+            </div>
+            <div class="swiper swiper-thumbs">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide cursor-pointer rounded-lg">
+                  <img src="img/product/prod-1.jpg" alt="product" />
+                </div>
+                <div class="swiper-slide cursor-pointer rounded-lg">
+                  <img src="img/product/prod-2.jpg" alt="product" />
+                </div>
+                <div class="swiper-slide cursor-pointer rounded-lg">
+                  <img src="img/product/prod-3.jpg" alt="product" />
+                </div>
+              </div>
+              <div
+                class="button-next absolute -right-16 z-20 flex h-10 w-10 select-none items-center justify-center rounded bg-black/30 text-xl text-white shadow transition-all duration-300 group-hover:right-4 hover:bg-primary-500 hover:shadow-md">
+                &#10095;
+              </div>
+              <div
+                class="button-prev absolute -left-16 z-20 flex h-10 w-10 select-none items-center justify-center rounded bg-black/30 text-xl text-white shadow transition-all duration-300 group-hover:left-4 hover:bg-primary-500 hover:shadow-md">
+                &#10094;
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 md:col-span-5">
+            <div class="my-1">
+              <a class="line-clamp-2 break-all text-2xl font-medium transition-all duration-300 hover:text-primary-500"
+                href="#">
+                Ryzen 5 3600x
+              </a>
+            </div>
+            <div class="my-2 flex justify-between">
+              <div class="my-2" data-rater="5"></div>
+              <div class="ml-auto">
+                <span class="relative z-[4] rounded-md bg-green-300 px-2 py-1 text-xs font-bold uppercase text-white">
+                  instock
+                </span>
+              </div>
+            </div>
+            <div class="my-5 flex items-center gap-5">
+              <div class="flex rounded-lg bg-white px-3 py-2 text-primary-500">
+                <span class="text-sm">$</span>
+                <span class="text-2xl font-semibold leading-7">37.00</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-md font-semibold uppercase text-green-400">
+                  25% Off
+                </span>
+                <span class="prev-price text-sm text-primary-500 line-through">
+                  $50.00
+                </span>
+              </div>
+            </div>
+            <div class="my-4">
+              <p class="line-clamp-5 break-all">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
+                cupiditate repellat magni exercitationem non, quaerat
+                consequatur. Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Earum cupiditate.
+              </p>
+            </div>
+            <div class="flex gap-1">
+              <form action="javascript:void(0)">
+                <div class="block">
+                  <div class="my-3 flex flex-col gap-1">
+                    <span class="font-bold">Size:</span>
+                    <ul class="flex flex-wrap gap-3">
+                      <li class="relative">
+                        <input class="peer sr-only" type="radio" value="" name="size" id="size-1" checked="" />
+                        <label
+                          class="flex h-8 w-10 cursor-pointer items-center justify-center rounded-lg border border-gray-300 bg-white peer-checked:border-transparent peer-checked:ring-2 peer-checked:ring-primary-500 hover:bg-gray-50 focus:outline-none"
+                          for="size-1">
+                          S
+                        </label>
+                      </li>
+                      <li class="relative">
+                        <input class="peer sr-only" type="radio" value="" name="size" id="size-2" />
+                        <label
+                          class="flex h-8 w-10 cursor-pointer items-center justify-center rounded-lg border border-gray-300 bg-white peer-checked:border-transparent peer-checked:ring-2 peer-checked:ring-primary-500 hover:bg-gray-50 focus:outline-none"
+                          for="size-2">
+                          M
+                        </label>
+                      </li>
+                      <li class="relative">
+                        <input class="peer sr-only" type="radio" value="" name="size" id="size-3" />
+                        <label
+                          class="flex h-8 w-10 cursor-pointer items-center justify-center rounded-lg border border-gray-300 bg-white peer-checked:border-transparent peer-checked:ring-2 peer-checked:ring-primary-500 hover:bg-gray-50 focus:outline-none"
+                          for="size-3">
+                          L
+                        </label>
+                      </li>
+                      <li class="relative">
+                        <input class="peer sr-only" type="radio" value="" name="size" id="size-4" />
+                        <label
+                          class="flex h-8 w-10 cursor-pointer items-center justify-center rounded-lg border border-gray-300 bg-white peer-checked:border-transparent peer-checked:ring-2 peer-checked:ring-primary-500 hover:bg-gray-50 focus:outline-none"
+                          for="size-4">
+                          XL
+                        </label>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="my-3 flex gap-2">
+                    <div>
+                      <label class="inline-flex items-center">
+                        <input type="radio"
+                          class="cursor-pointer border-transparent bg-blue-600 text-blue-600 checked:bg-none checked:ring checked:ring-blue-300 focus:ring focus:ring-blue-300 focus:ring-offset-0"
+                          name="radio-colors" value="0" checked />
+                      </label>
+                    </div>
+                    <div>
+                      <label class="inline-flex items-center">
+                        <input type="radio"
+                          class="cursor-pointer border-transparent bg-red-600 text-red-600 checked:bg-none checked:ring checked:ring-red-300 focus:ring focus:ring-red-300 focus:ring-offset-0"
+                          name="radio-colors" value="1" />
+                      </label>
+                    </div>
+                    <div>
+                      <label class="inline-flex items-center">
+                        <input type="radio"
+                          class="cursor-pointer border-transparent bg-yellow-600 text-yellow-600 checked:bg-none checked:ring checked:ring-yellow-300 focus:ring focus:ring-yellow-300 focus:ring-offset-0"
+                          name="radio-colors" value="2" />
+                      </label>
+                    </div>
+                    <div>
+                      <label class="inline-flex items-center">
+                        <input type="radio"
+                          class="cursor-pointer border-transparent bg-black text-black checked:bg-none checked:ring checked:ring-gray-400 focus:ring focus:ring-gray-400 focus:ring-offset-0"
+                          name="radio-colors" value="3" />
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-wrap justify-start gap-5">
+                  <div class="counter inline-flex rounded-lg bg-white">
+                    <input
+                      class="counter-value input-number w-12 border-none bg-transparent p-1 text-center text-lg text-gray-400 focus:border-none focus:ring-0"
+                      type="number" value="0" />
+                    <div class="flex w-5 flex-col justify-between">
+                      <button class="increment text-primary-500" type="button">
+                        <i class="bi bi-caret-up-fill pointer-events-none"></i>
+                      </button>
+                      <button class="decrement text-primary-500" type="button">
+                        <i class="bi bi-caret-down-fill pointer-events-none"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="flex gap-2">
+                    <button
+                      class="relative flex h-full w-full items-center justify-center gap-2 overflow-hidden rounded-lg bg-primary-500 p-2 transition-all duration-300 after:absolute after:left-2/4 after:top-2/4 after:h-0 after:w-0 after:rounded-lg after:bg-primary-400 after:transition-all after:duration-300 after:content-[''] hover:after:left-0 hover:after:top-0 hover:after:z-[3] hover:after:h-full hover:after:w-full"
+                      type="submit">
+                      <i class="bi bi-cart-fill relative z-[4] flex text-xl text-white"></i>
+                      <span class="relative z-[4] font-bold uppercase text-white">
+                        Add to cart
+                      </span>
+                    </button>
+                    <a class="tippy tippy-wishlist wishlist-button flex min-h-[40px] min-w-[40px] cursor-pointer items-center justify-center gap-2 rounded-lg bg-primary-500 p-2 transition-all duration-300 hover:bg-primary-400"
+                      href="javascript:void(0)">
+                      <i class="bi bi-heart pointer-events-none flex text-white"></i>
+                    </a>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="mt-5 border-t border-gray-200 pt-5">
+              <div>
+                <b>Categories:</b>
+                <span>
+                  <a href="#" class="text-zinc-500">Hardware</a>
+                  ,
+                  <a href="#" class="text-zinc-500">Processors</a>
+                </span>
+              </div>
+              <div class="flex gap-2">
+                <b>Share:</b>
+                <div class="flex items-center gap-[10px]">
+                  <a href="#">
+                    <i class="bi bi-facebook flex text-zinc-500 transition-all duration-300 hover:text-primary-500"></i>
+                  </a>
+                  <a href="#">
+                    <i
+                      class="bi bi-twitter-x flex text-zinc-500 transition-all duration-300 hover:text-primary-500"></i>
+                  </a>
+                  <a href="#">
+                    <i class="bi bi-whatsapp flex text-zinc-500 transition-all duration-300 hover:text-primary-500"></i>
+                  </a>
+                  <a href="#">
+                    <i
+                      class="bi bi-link-45deg flex text-zinc-500 transition-all duration-300 hover:text-primary-500"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- -->
+
+  <div class="scroll-up fixed -bottom-16 right-10 z-50 transition-all duration-300">
+    <div class="cursor-pointer rounded-lg bg-black/30 p-3 transition-all duration-300 hover:bg-primary-500">
+      <i class="bi bi-chevron-compact-up pointer-events-none flex text-2xl text-white"></i>
+    </div>
+  </div>
+
+  <div class="loader fixed z-[999] flex h-screen w-screen items-center justify-center bg-white">
+    <div class="loader-content flex flex-col items-center gap-2">
+      <span class="text-3xl font-bold text-gray-200">Megabyte</span>
+      <div class="flex h-1 w-40 overflow-hidden bg-gray-200">
+        <div class="h-full w-20 animate-loader bg-primary-400"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer-section mt-auto w-full bg-[#0b0d17] text-gray-400">
+    <div class="container mx-auto grid grid-cols-12 px-4 sm:px-8">
+      <div class="col-span-12 py-[50px]">
+        <div class="grid grid-cols-12 gap-2">
+          <div class="col-span-12 sm:col-span-6 lg:col-span-4">
+            <div class="pb-6">
+              <img src="img/logo.png" class="h-[40px]" alt="logo" />
+            </div>
+            <div>
+              <div class="flex items-center gap-[10px] py-2">
+                <i class="bi bi-envelope-fill flex text-xl text-primary-500"></i>
+                <a class="break-all" href="#">megabyte@example.com</a>
+              </div>
+              <div class="flex items-center gap-[10px] py-2">
+                <i class="bi bi-telephone-fill flex text-xl text-primary-500"></i>
+                <a class="break-all" href="#">(+54) 2284-123456789</a>
+              </div>
+              <div class="flex items-center gap-[10px] py-2">
+                <i class="bi bi-geo-alt-fill flex text-xl text-primary-500"></i>
+                <span class="break-all">Colón 1234, Olavarría</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 py-5 sm:col-span-6 sm:py-0 lg:col-span-4">
+            <h3 class="pb-2 font-semibold text-gray-300">Useful Links</h3>
+            <div>
+              <ul class="flex flex-col flex-wrap gap-2 text-sm xs:max-h-[200px]">
+                <li class="group relative flex items-center hover:text-primary-500">
+                  <i
+                    class="bi bi-circle-fill invisible absolute -left-4 flex text-[6px] text-primary-500 group-hover:visible"></i>
+                  <a href="#" class="transition-all duration-300 group-hover:text-white">
+                    Terms &amp; Conditions
+                  </a>
+                </li>
+                <li class="group relative flex items-center hover:text-primary-500">
+                  <i
+                    class="bi bi-circle-fill invisible absolute -left-4 flex text-[6px] text-primary-500 group-hover:visible"></i>
+                  <a href="#" class="transition-all duration-300 group-hover:text-white">
+                    New products
+                  </a>
+                </li>
+                <li class="group relative flex items-center hover:text-primary-500">
+                  <i
+                    class="bi bi-circle-fill invisible absolute -left-4 flex text-[6px] text-primary-500 group-hover:visible"></i>
+                  <a href="#" class="transition-all duration-300 group-hover:text-white">
+                    Best sales
+                  </a>
+                </li>
+                <li class="group relative flex items-center hover:text-primary-500">
+                  <i
+                    class="bi bi-circle-fill invisible absolute -left-4 flex text-[6px] text-primary-500 group-hover:visible"></i>
+                  <a href="#" class="transition-all duration-300 group-hover:text-white">
+                    Secure payment
+                  </a>
+                </li>
+                <li class="group relative flex items-center hover:text-primary-500">
+                  <i
+                    class="bi bi-circle-fill invisible absolute -left-4 flex text-[6px] text-primary-500 group-hover:visible"></i>
+                  <a href="#" class="transition-all duration-300 group-hover:text-white">
+                    Services
+                  </a>
+                </li>
+                <li class="group relative flex items-center hover:text-primary-500">
+                  <i
+                    class="bi bi-circle-fill invisible absolute -left-4 flex text-[6px] text-primary-500 group-hover:visible"></i>
+                  <a href="#" class="transition-all duration-300 group-hover:text-white">
+                    Delivery
+                  </a>
+                </li>
+                <li class="group relative flex items-center hover:text-primary-500">
+                  <i
+                    class="bi bi-circle-fill invisible absolute -left-4 flex text-[6px] text-primary-500 group-hover:visible"></i>
+                  <a href="#" class="transition-all duration-300 group-hover:text-white">
+                    Legal Notice
+                  </a>
+                </li>
+                <li class="group relative flex items-center hover:text-primary-500">
+                  <i
+                    class="bi bi-circle-fill invisible absolute -left-4 flex text-[6px] text-primary-500 group-hover:visible"></i>
+                  <a href="#" class="transition-all duration-300 group-hover:text-white">
+                    About us
+                  </a>
+                </li>
+                <li class="group relative flex items-center hover:text-primary-500">
+                  <i
+                    class="bi bi-circle-fill invisible absolute -left-4 flex text-[6px] text-primary-500 group-hover:visible"></i>
+                  <a href="#" class="transition-all duration-300 group-hover:text-white">
+                    Contact us
+                  </a>
+                </li>
+                <li class="group relative flex items-center hover:text-primary-500">
+                  <i
+                    class="bi bi-circle-fill invisible absolute -left-4 flex text-[6px] text-primary-500 group-hover:visible"></i>
+                  <a href="#" class="transition-all duration-300 group-hover:text-white">
+                    Stores
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-span-12 lg:col-span-4">
+            <h3 class="pb-2 font-semibold text-gray-300">
+              Be the first to know it
+            </h3>
+            <span class="py-2 text-sm">
+              Subscribe to receive updates on our store and special offers
+            </span>
+            <form class="py-2">
+              <div class="flex overflow-hidden rounded-lg bg-white/10 p-2">
+                <input
+                  class="w-full border-none bg-transparent pl-2 focus:border-none focus:ring-0 focus:ring-transparent"
+                  type="text" placeholder="Your email address" />
+                <button class="p-1" type="submit">
+                  <i class="bi bi-send flex text-lg text-white"></i>
+                </button>
+              </div>
+            </form>
+            <div class="flex gap-2 py-2">
+              <div class="relative h-8 w-8 overflow-hidden rounded-full">
+                <a class="flex h-8 w-8 items-center justify-center bg-white/10 text-center text-white after:absolute after:left-0 after:top-0 after:block after:h-full after:w-full after:bg-gradient-to-tr after:from-orange-300 after:via-red-500 after:to-purple-800 after:opacity-0 after:transition-all after:duration-300 after:content-[''] hover:after:opacity-100"
+                  href="#">
+                  <i class="bi bi-instagram relative z-[2] flex"></i>
+                </a>
+              </div>
+              <div class="h-8 w-8 rounded-full bg-white/10 transition-all duration-300 hover:bg-[#1877f2]">
+                <a class="flex h-8 w-8 items-center justify-center" href="#">
+                  <i class="bi bi-facebook flex text-white"></i>
+                </a>
+              </div>
+              <div class="h-8 w-8 rounded-full bg-white/10 transition-all duration-300 hover:bg-black">
+                <a class="flex h-8 w-8 items-center justify-center" href="#">
+                  <i class="bi bi-twitter-x flex text-white"></i>
+                </a>
+              </div>
+              <div class="h-8 w-8 rounded-full bg-white/10 transition-all duration-300 hover:bg-[#ff0000]">
+                <a class="flex h-8 w-8 items-center justify-center" href="#">
+                  <i class="bi bi-youtube flex text-white"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-span-12 pb-5">
+        <p class="text-center">
+          ©
+          <span class="current-year"></span>
+          Example. All rights reserved
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./lib/tippy/tippy.js"></script>
+  <script src="./lib/tippy/popper.js"></script>
+  <script src="./lib/rater-js/rater-js.js"></script>
+  <script src="./lib/swiper/swiper-bundle.min.js"></script>
+  <script src="./lib/metisMenu/metismenujs.min.js"></script>
+  <script src="./lib/nice-select2/nice-select2.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

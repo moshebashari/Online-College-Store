@@ -16,8 +16,8 @@ export default function Header() {
         if (searchTerm) {
             fetchProducts(searchTerm, true)
                 .then(products => {
-                    navigate('/search');
-                    console.log('Searched products results: ', products);
+                    navigate('/search', {state: {products: products, searchValue: searchTerm}});
+                    // console.log('Searched products results: ', products);
                 })
         }
     }

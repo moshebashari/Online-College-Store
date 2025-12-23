@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 export default function ProductCard(props) {
   return (
-    <div className="swiper-slide h-auto" key={props.product.id}>
       <div
         className="card-container relative flex h-full flex-col overflow-hidden rounded-lg bg-white p-5 shadow-md transition-all duration-300 hover:z-[2] hover:-translate-y-2 hover:shadow-xl">
         <div className="absolute right-[10px] top-[10px]">
@@ -39,7 +38,7 @@ export default function ProductCard(props) {
               <a href="#">
                 <img
                   className="h-full w-full object-contain"
-                  src={props.product.url}
+                  src={props.product.images[0].url}
                   alt="product" />
               </a>
             </div>
@@ -103,6 +102,5 @@ export default function ProductCard(props) {
           </a>
         </div>
       </div>
-    </div>
   )
 }

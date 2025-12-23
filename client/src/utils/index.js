@@ -21,7 +21,7 @@ export const fetchProducts = async (query, isSearch = false) => {
     const response = await fetch(url);
     if (!response.ok) throw new Error('Failed to fetch products');
     const data = await response.json();
-    return data.products || [];
+    return data.products && data.products.length > 0 ? data.products : null;
   } catch (error) {
     console.error('Error fetching products:', error);
     throw error;
