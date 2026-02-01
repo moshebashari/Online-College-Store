@@ -7,4 +7,7 @@ router.get('/contact', ApiController.sendContactForm);
 
 router.get('/categories', HomeController.getCategories)
 
+router.get('/product-categories/:categoryId', ApiController.getProductCategories)
+
+
 module.exports = router;

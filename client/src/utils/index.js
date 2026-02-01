@@ -28,6 +28,19 @@ export const fetchProducts = async (query, isSearch = false) => {
   }
 };
 
+export const fetchProductsTest = async (route) => {
+  try {
+    const url = `${API_BASE_URL}/api/${route}`;
+    const response = await fetch(url);
+    if (!response.ok) throw new Error('Failed to fetch products');
+    const data = await response.json();
+    return data.products && data.products.length > 0 ? data.products : null;
+  } catch (error) {
+    console.error('Error fetching products:', error);
+    throw error;
+  }
+};
+
 export const fetchProduct = async (productId) => {
   try {
     const response = await fetch(`${API_BASE_URL}/product/${productId}`);
@@ -52,6 +65,20 @@ export const fetchCategories = async () => {
     throw error;
   }
 }
+
+export const fetchProductCategories = async (categoryId ,query) => {
+  try {
+    const url = `${API_BASE_URL}/api/product-categories/${categoryId}/${query ? `q=${query}` : ''}`;
+    const response = await fetch(url);
+    if (!response.ok) throw new Error('Failed to fetch products');
+    const data = await response.json();
+    return data.products && data.products.length > 0 ? data.products : null;
+  } catch (error) {
+    console.error('Error fetching products:', error);
+    throw error;
+  }
+};
+
 
 export const sendContactForm = async (formData) => {
   try {

@@ -1,4 +1,30 @@
-const {Form} = require('../models');
+const {Form, Product, ProductCategories, ProductImages} = require('../models');
+
+
+
+const getProductCategories = async (req, res) =>{
+    try {
+        const categoryId = parseInt(req.params.categoryId);
+  
+        const productData = await Product.findAll({
+            include: [
+            { model: ProductImages, required: false, attributes: ['url'], as: 'images' },
+            {
+                model: ProductCategories,
+                required: true,
+                attributes: [],
+                where: {categoryId}
+            }
+            ] // join
+        })
+        // console.log('productData', productData);
+        const products = productData;
+        res.json({products});
+    }
+    catch (err) {
+        console.log(err.message);
+    }
+}
 
 
 const sendContactForm = async (req, res) => {
@@ -21,5 +47,6 @@ const sendContactForm = async (req, res) => {
 
 
 module.exports = {
+    getProductCategories,
     sendContactForm
 }

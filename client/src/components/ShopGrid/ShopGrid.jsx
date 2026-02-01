@@ -2,7 +2,7 @@ import CategoriesFilter from './CategoriesFilter';
 import ProductCard from '../ProductCard/ProductCard';
 
 
-export default function Search(props) {
+export default function ShopGrid(props) {
 
 
 

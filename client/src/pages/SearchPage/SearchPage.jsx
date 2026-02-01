@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Header from '../../components/Header/Header'
-import Search from '../../components/Search/Search'
+import ShopGrid from '../../components/ShopGrid/ShopGrid'
 import Footer from '../../components/Footer/Footer'
 import BreadCrumbs from '../../components/BreadCrumbs/BreadCrumbs';
 import { useLocation } from 'react-router-dom';
@@ -14,7 +14,7 @@ export default function SearchPage() {
         <>
             <Header />
             <BreadCrumbs first={'Home'} second={'Shop'} />
-            <Search products={products} searchValue={searchValue}/> 
+            <ShopGrid products={products} searchValue={searchValue}/> 
             <Footer />
         </>
     )
