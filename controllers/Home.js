@@ -4,7 +4,11 @@ const { Op, sequelize } = require('sequelize');
 
 
 const homePage = async (request, response) => {
-
+    const categoryIcons = ['bi-laptop', 'bi-phone-fill', 'bi-pc', 'bi-playstation', 'bi-device-ssd-fill', '',
+                           'bi-camera-fill', 'bi-printer-fill', '', 'bi-earbuds', 'bi-plug-fill', 'bi-router-fill',
+                           'bi-server', 'bi-display']
+    const slides = Math.ceil(categoryIcons.length / 8);
+    const count  = 0;
     try {
         const productsData = await Product.findAll({
             include: [{ model: ProductImages, required: false, attributes: ['url'], as: 'images' }] // join
@@ -17,10 +21,15 @@ const homePage = async (request, response) => {
             ...p['_previousDataValues'],
             url: p['_previousDataValues']['images'][0].url
         }));
+        const allCategories = await Category.findAll()
+        const categories = allCategories.map(c => c.toJSON()) 
         // console.log('products', products.length);
         response.render('Home', {
             title: 'Ivory Store Homepage',
-            products
+            products,
+            categoryIcons,
+            slides,
+            count
         });
     }
     catch (err) {
@@ -49,7 +58,7 @@ const contactUsPage = (request, response) => {
 }
 
 const searchPage = async (request, response) => {
-    let searchValue = request.query.keyword;
+    let searchValue = request.query.q;
     console.log(searchValue)
     searchValue = decodeURIComponent(searchValue).trim();
     try {
@@ -62,16 +71,18 @@ const searchPage = async (request, response) => {
                 // ]
                 name: {
                     [Op.like]: `%${searchValue}%`
-                }
+                },
             },
-            include: [{ model: ProductImages, required: false, attributes: ['url'], as: 'images' }]
+            include: [{ model: ProductImages, required: false, attributes: ['url'], as: 'images' }],
+            order:[ ['price', 'ASC']],
         })
         const products = allProducts.map(p => p.toJSON());
         // console.log(products)
 
         const allCategories = await Category.findAll()
         const categories = allCategories.map(c => c.toJSON())
-        response.render('Search-results', {
+        response.render('Shop-grid', {
+            searchValue,
             products,
             categories
         })

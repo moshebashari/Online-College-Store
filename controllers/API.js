@@ -1,5 +1,5 @@
-const { request } = require('express');
-const {Form, Product} = require('../models');
+const { request, response } = require('express');
+const { Form, Product, ProductImages, Category } = require('../models');
 const { Op } = require('sequelize');
 
 const sendContactForm = async (req, res) => {
@@ -23,27 +23,27 @@ const sendContactForm = async (req, res) => {
 const searchItems = async (request, response) => {
     const value = decodeURIComponent(request.query.value).trim();
     try {
-            const allProducts = await Product.findAll({
-                attributes: ['id', 'name'],
-                where: {
-                    name: {
-                        [Op.like]: `%${value}%`
-                    }
-                },
-            })
-            const products = allProducts.map(p => p.toJSON());
-            console.log(products)
+        const allProducts = await Product.findAll({
+            attributes: ['id', 'name'],
+            where: {
+                name: {
+                    [Op.like]: `%${value}%`
+                }
+            },
+        })
+        const products = allProducts.map(p => p.toJSON());
+        console.log(products)
 
-            response.json(products);
-        }
-        catch (err) {
-            console.log(err.message);
-        }
-    
+        response.json(products);
+    }
+    catch (err) {
+        console.log(err.message);
+    }
+
 }
 
 
 module.exports = {
     sendContactForm,
-    searchItems
+    searchItems,
 }

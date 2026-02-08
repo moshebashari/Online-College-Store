@@ -2014,7 +2014,7 @@
       </div>
     </div>
   </div>
-
+  <% if (locals.categoryIcons) { %>
   <div class="categories-section container mx-auto my-5 px-2 sm:px-8">
     <div
       class="liner-container mb-5 flex justify-center border-b-2 border-[rgba(119,119,119,.17)]">
@@ -2028,21 +2028,24 @@
       <div
         class="swiper swiper-default group relative flex items-center py-5">
         <div class="swiper-wrapper">
+          <% for (let i = 0 ; i < slides; i++) { %>
           <div class="swiper-slide">
             <div
               class="grid grid-cols-3 xs:grid-cols-6 sm:grid-cols-9 lg:grid-cols-12">
+              <% for (let j = 0; j < 8 && count < categoryIcons.length; j++) { %>
               <div class="col-span-3 flex border">
                 <a
                   class="flex w-full justify-center bg-white p-5 transition-all duration-300 hover:relative hover:z-[2] hover:shadow-xl"
                   href="#">
                   <div>
                     <i
-                      class="bi bi-gpu-card mb-2 flex justify-center text-[40px] text-primary-500"></i>
+                      class="<%= `bi ${categoryIcons[count++]} mb-2 flex justify-center text-[40px] text-primary-500` %>"></i>
                     <span class="text-gray-40">Video Cards</span>
                   </div>
                 </a>
               </div>
-              <div class="col-span-3 flex border">
+              <% } %>
+              <!-- <div class="col-span-3 flex border">
                 <a
                   class="flex w-full justify-center bg-white p-5 transition-all duration-300 hover:relative hover:z-[2] hover:shadow-xl"
                   href="#">
@@ -2118,10 +2121,11 @@
                     <span class="text-gray-40">Cases</span>
                   </div>
                 </a>
-              </div>
+              </div> -->
             </div>
           </div>
-          <div class="swiper-slide">
+          <% } %>
+          <!-- <div class="swiper-slide">
             <div
               class="grid grid-cols-3 xs:grid-cols-6 sm:grid-cols-9 lg:grid-cols-12">
               <div class="col-span-3 flex border">
@@ -2213,14 +2217,14 @@
                 </a>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
         <div
           class="swiper-pagination !bottom-[unset] !top-[-5px] text-right"></div>
       </div>
     </div>
   </div>
-
+ <% } %>
   <div class="brands-section container mx-auto my-5 px-2 sm:px-8">
     <div class="swiper swiper-brands group relative flex items-center">
       <div class="swiper-wrapper flex select-none items-center">

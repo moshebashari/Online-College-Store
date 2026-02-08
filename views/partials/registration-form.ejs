@@ -21,19 +21,19 @@
             <img class="mx-auto" src="/img/logo2.png" alt="logo" />
           </div>
           <!-- login form start-->
-          <form action="#" method="post">
+          <form action="/auth/log-in" method="post">
             <div class="flex flex-col gap-4">
               <div class="relative flex h-[40px] items-center">
                 <i class="bi bi-person absolute ml-2 flex text-[24px] text-gray-400"></i>
                 <input
                   class="w-full rounded-lg border-2 border-gray-200 bg-white pl-10 outline-none transition-all duration-300 focus:border-2 focus:border-primary-500 focus:ring-0"
-                  type="text" placeholder="Username or Email" required />
+                  type="text" placeholder="Username or Email" name="userOrEmail" required />
               </div>
               <div class="relative flex h-[40px] items-center">
                 <i class="bi bi-lock absolute ml-2 flex text-[24px] text-gray-400"></i>
                 <input
                   class="w-full rounded-lg border-2 border-gray-200 bg-white pl-10 outline-none transition-all duration-300 focus:border-2 focus:border-primary-500 focus:ring-0"
-                  type="password" placeholder="Password" required />
+                  type="password" placeholder="Password" name="password" required />
               </div>
               <button
                 class="relative h-full w-full overflow-hidden rounded-lg bg-primary-500 p-2 transition-all duration-300 after:absolute after:left-2/4 after:top-2/4 after:h-0 after:w-0 after:rounded-lg after:bg-primary-400 after:transition-all after:duration-300 after:content-[''] hover:after:left-0 hover:after:top-0 hover:after:z-[3] hover:after:h-full hover:after:w-full"

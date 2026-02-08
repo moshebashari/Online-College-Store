@@ -14,13 +14,15 @@ const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const jwt = require('jsonwebtoken');
+require('dotenv').config();
+const PRIVATE_KEY = process.env.PRIVATE_KEY;
 
-
-var sessionStore = new SequelizeStore({
-    db: sequelize,
-    checkExpirationInterval: 15 * 60 * 1000,
-    expiration: 7 * 24 * 60 * 60 * 1000
-});
+// var sessionStore = new SequelizeStore({
+//     db: sequelize,
+//     checkExpirationInterval: 15 * 60 * 1000,
+//     expiration: 7 * 24 * 60 * 60 * 1000
+// });
 
 
 const app = express();
@@ -28,14 +30,17 @@ app.use(bodyParser.urlencoded())
 app.use(cookieParser())
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')))
-app.use(session({
-    secret: 'keyboard cat',
-    resave: false,
-    saveUninitialized: false,
-    store: sessionStore
-}));
+// app.use(session({
+//     secret: 'keyboard cat',
+//     resave: false,
+//     saveUninitialized: false,
+//     store: sessionStore
+// }));
 app.use((req, res, next) => {
-    res.locals.user = req.session.user;
+    const token = req.cookies.token;
+    const user = token ? jwt.verify(token, PRIVATE_KEY) : null
+    res.locals.user = user;
+    // res.locals.user = req.session.user;
     next();
 });
 
@@ -49,7 +54,7 @@ app.listen(PORT, async function () {
     console.log(chalk.blue('Server is running!'));
     try {
         await sequelize.authenticate();
-        await sessionStore.sync();
+        // await sessionStore.sync();
         console.log(chalk.green('connection has been established successfully'));
     }
     catch {
